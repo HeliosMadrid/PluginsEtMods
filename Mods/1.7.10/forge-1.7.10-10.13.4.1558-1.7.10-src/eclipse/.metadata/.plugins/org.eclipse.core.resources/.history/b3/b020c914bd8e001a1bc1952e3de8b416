@@ -1,0 +1,28 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.World;
+import net.minecraft.world.WorldType;
+import net.minecraft.world.biome.WorldChunkManager;
+import net.minecraft.world.gen.layer.GenLayer;
+import net.minecraftforge.common.DimensionManager;
+
+public class WorldTypeAstral extends WorldType
+{
+    public WorldTypeAstral()
+    {
+        super("StarLands");
+        
+        DimensionManager.unregisterProviderType(2);
+        DimensionManager.registerProviderType(2, WorldProviderAstral.class, true);
+    }
+    
+    public GenLayer getBiomeLayer(long worldSeed, GenLayer parenLayer)
+    {
+        
+    }
+    
+    public WorldChunkManager getChunkManager(World world)
+    {
+        
+    }
+}

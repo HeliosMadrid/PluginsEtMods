@@ -1,0 +1,8 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.WorldProviderSurface;
+
+public class WorldProviderAstral extends WorldProviderSurface
+{
+
+}

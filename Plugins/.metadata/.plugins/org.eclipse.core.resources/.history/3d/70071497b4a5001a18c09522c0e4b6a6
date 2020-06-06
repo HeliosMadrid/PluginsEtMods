@@ -1,0 +1,6 @@
+package fr.helios.uhcrunios.game;
+
+public enum UHCState
+{
+    WAIT, GAME, PVP, FINISH
+}

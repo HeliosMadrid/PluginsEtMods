@@ -1,0 +1,8 @@
+package fr.helios.astral.blocks;
+
+import net.minecraft.tileentity.TileEntity;
+
+public class TileEntityAstral extends TileEntity
+{
+    
+}

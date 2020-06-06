@@ -1,0 +1,16 @@
+name: AstralPlugin
+version: 1.0
+author: Helios_38
+main: fr.helios.astralplugin.AstralPlugin
+commands:
+  test:
+    description: C'est une commande de test
+    permission: test.use
+  alert:
+    description: C'est pour alerter les players
+    permission: bc.use
+  spawn:
+    description: C'est pour se tp au spawn
+  event:
+    description: Permet de fair spawn un coffre aléatoire
+    permission: chest.randomspawn

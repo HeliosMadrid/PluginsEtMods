@@ -1,0 +1,7 @@
+name: ArmorStand
+version: 1.0
+author: Helios_38
+main: fr.helios.asrmorstand.Main
+commands:
+  as:
+    description: permet de faire apparaitre des armostand sur le server

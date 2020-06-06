@@ -1,0 +1,32 @@
+package fr.elliot.sratch;
+
+public class Pourcentage
+{
+    public int nombreDeCombinaisonBonnes;
+    public int nombreDeCombiansionsBad;
+    public int nombreDeCombinaisonTotal;
+    
+    public float CalculDuPoucentage1(int faces1, int faces2, int result1)
+    {
+        this.nombreDeCombinaisonTotal = faces1 * faces2;//6 * 6 = 36
+        
+        for(int i = 1; i >= faces1; i++)//i = 1 / 6
+        {
+            for(int j = 1; j >= faces2; j++)//j = 1 / 6
+            {
+                int test = (faces1 - (faces1 - i)) + (faces2 - (faces2 - j));//test = 6 - 5 = 1 + j = 6 - 2 = 4 --> test = 5
+                
+                if(test == result1)
+                {
+                    nombreDeCombinaisonBonnes++;// nombreDeCombinaisonBonnes = 
+                }
+                else
+                {
+                    nombreDeCombiansionsBad++;// nombreDeCombiansionsBad = |||
+                }
+            }
+        }
+        
+        return 0;
+    }
+}

@@ -1,0 +1,8 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.gen.feature.WorldGenerator;
+
+public class WorldGenShrine extends WorldGenerator
+{
+
+}

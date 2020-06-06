@@ -1,0 +1,37 @@
+package fr.helios.astral.utils.event;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+
+public class EnchantementAstralManager
+{
+    @SubscribeEvent
+    public void onHurt(LivingHurtEvent event)
+    {
+        if(event.source.getEntity() instanceof EntityLivingBase)
+        {
+            EntityLivingBase entity = (EntityLivingBase) event.source.getEntity();
+            if(entity.getHeldItem() != null)
+            {
+                
+            }
+        }
+    }
+    
+    public boolean hasEnchantment(ItemStack stack, int id)
+    {
+        boolean flag = false;
+        if(stack.getEnchantmentTagList() != null)
+        {
+            for(int i = 0; i < stack.getEnchantmentTagList().tagCount(); i++)
+            {
+                if(stack.getEnchantmentTagList().getCompoundTagAt(i).getShort("id") == id)
+                {
+                    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+package fr.helios.uhcrunios;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class UCHRunIos extends JavaPlugin
+{
+    public static UCHRunIos instance;
+    
+    public static UCHRunIos getInstance()
+    {
+        return instance;
+    }
+
+    @Override
+    public void onEnable()
+    {
+        instance = this;
+        EventsManager.registerEvents(this);
+    }
+}

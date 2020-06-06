@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        " R ",
+        " R "
+    ],
+    "key": {
+        "#": {
+            "item": "astral:fragementLunaire",
+			"data": 0
+        },
+        "R": {
+            "item": "minecraft:stick",
+			"data": 0
+        }
+    },
+    "result": {
+        "item": "astral:piocheLune",
+		"data": 0,
+        "count": 1
+    }
+}

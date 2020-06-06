@@ -1,0 +1,35 @@
+package fr.helios.uhcrunios.game;
+
+import java.util.UUID;
+
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+import fr.helios.uhcrunios.UHCRunIos;
+import fr.helios.uhcrunios.util.UHCTeleport;
+
+public class UHCGame
+{
+    public static boolean fallOrNot;
+    
+    public static void start()
+    {
+        fallOrNot = true;
+        
+        for(UUID uuid : UHCRunIos.getInstance().playersInGame)
+        {
+            Player player = Bukkit.getPlayer(uuid);
+            
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 4));
+            
+            UHCTeleport.tpRandom(player);
+        }
+        for(int i = 10; i <= 0; i--)
+        {
+            
+        }
+        fallOrNot = false;
+    }
+}

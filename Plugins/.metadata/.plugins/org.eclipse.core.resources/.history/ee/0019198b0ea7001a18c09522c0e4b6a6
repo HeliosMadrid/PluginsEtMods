@@ -1,0 +1,141 @@
+package fr.helios.uhcrunios.event;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.PrepareItemCraftEvent;
+import org.bukkit.inventory.CraftingInventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+public class UHCSpeedRecipes implements Listener
+{
+    @SuppressWarnings("deprecation")
+    @EventHandler
+    public void changeCraft(PrepareItemCraftEvent event)
+    {
+        if(event.getInventory() instanceof CraftingInventory)
+        {
+            CraftingInventory inv = (CraftingInventory)event.getInventory();
+            Player player = (Player)event.getView();
+            ArrayList<Player> players = new ArrayList<Player>();
+            
+            ItemStack piocheEnPierre = new ItemStack(Material.STONE_PICKAXE, 1);
+            ItemStack piochEnFer = new ItemStack(Material.IRON_PICKAXE, 1);
+            ItemStack bow = new ItemStack(Material.BOW, 1);
+            
+            ItemMeta customPP = piocheEnPierre.getItemMeta();
+            ItemMeta customPF = piochEnFer.getItemMeta();
+            ItemMeta customB = bow.getItemMeta();
+            
+            customB.addEnchant(Enchantment.ARROW_DAMAGE, 3, true);
+            customB.addEnchant(Enchantment.ARROW_KNOCKBACK, 2, true);
+            customB.addEnchant(Enchantment.DURABILITY, 4, true);
+            customB.setDisplayName("§4SHOOTER§o C O R E");
+            
+            customPF.setDisplayName("§7HelpFullTool");
+            customPF.addEnchant(Enchantment.DIG_SPEED, 2, true);
+            customPF.addEnchant(Enchantment.DURABILITY, 4, true);
+            
+            customPP.setDisplayName("§8SpeedyStoner");
+            customPP.addEnchant(Enchantment.DIG_SPEED, 2, true);
+            customPP.addEnchant(Enchantment.DURABILITY, 3, true);
+            
+            piocheEnPierre.setItemMeta(customPP);
+            bow.setItemMeta(customB);
+            piochEnFer.setItemMeta(customPF);
+            
+            switch(inv.getResult().getType())
+            {
+                case WOOD_PICKAXE:
+                    
+                    inv.setResult(piocheEnPierre);
+                    
+                    break;
+                    
+                case IRON_PICKAXE:
+                    
+                    inv.setResult(piochEnFer);
+                    
+                    break;
+                    
+                case BOW:
+                    
+                    inv.setResult(bow);
+                    
+                    break;
+
+                case BOWL:
+                    Random r = new Random();
+                    inv.setResult(new ItemStack(Material.getMaterial(r.nextInt(462) + 1), r.nextInt(64)));
+                    players.add(player);
+                    
+                    break;
+
+                /*case :
+                    
+                    inv.setResult();
+                    
+                    break;
+
+                case :
+                    
+                    inv.setResult();
+                    
+                    break;
+
+                case :
+                    
+                    inv.setResult();
+                    
+                    break;
+
+                case :
+                    
+                    inv.setResult();
+                    
+                    break;
+
+                case :
+                    
+                    inv.setResult();
+                    
+                    break;
+
+                case :
+
+                    inv.setResult();
+                    
+                    break;
+
+                case :
+                    
+                    inv.setResult();
+                    
+                    break;
+
+                case :
+                    
+                    inv.setResult();
+                    
+                    break;
+
+                case :
+                    
+                    inv.setResult();
+                    
+                    break;*/
+                    
+                default:
+                    
+                    break;
+                    
+            }
+        }
+    }
+}

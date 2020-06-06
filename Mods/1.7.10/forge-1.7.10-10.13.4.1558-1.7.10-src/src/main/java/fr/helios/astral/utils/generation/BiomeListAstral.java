@@ -1,0 +1,18 @@
+/*package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.biome.BiomeGenBase;
+
+public class BiomeListAstral
+{
+    public static WorldTypeAstral worldTypeAstral;
+    
+    public static BiomeGenBase astralStonePlains, astralMegaMoutain;
+    
+    protected static final BiomeGenBase.Height height_MidHills = new BiomeGenBase.Height(1.6F, 0.9F);
+    protected static final BiomeGenBase.Height height_LowPlains = new BiomeGenBase.Height(0.125F, 0.03F);
+    
+    public static void BiomeList()
+    {
+        
+    }
+}*/

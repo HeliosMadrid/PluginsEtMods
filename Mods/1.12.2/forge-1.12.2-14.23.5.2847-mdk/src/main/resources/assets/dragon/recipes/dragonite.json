@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "iii",
+        "iii",
+        "iii"
+    ],
+    "key": {
+        "i": {
+            "item": "dragon:lingot_de_dragonite",
+			"data": 0
+        }
+    },
+    "result": {
+        "item": "dragon:dragonite",
+		"data": 0,
+        "count": 1
+    }
+}

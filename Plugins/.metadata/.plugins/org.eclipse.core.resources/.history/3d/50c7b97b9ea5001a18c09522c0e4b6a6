@@ -1,0 +1,9 @@
+package fr.helios.plugios.util;
+
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
+
+public class TntBreakEvent extends Event
+{
+    
+}

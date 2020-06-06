@@ -1,0 +1,11 @@
+package fr.helios.vault.listener;
+
+import org.bukkit.event.Listener;
+
+public class VaultListener implements Listener
+{
+    private boolean setupEconomy()
+    {
+        
+    }
+}

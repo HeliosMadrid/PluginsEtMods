@@ -1,0 +1,11 @@
+package fr.helios.uhcrunios.game;
+
+public class UHCGame
+{
+
+    public static void start()
+    {
+        // TODO Auto-generated method stub
+        
+    }
+}

@@ -1,0 +1,25 @@
+package fr.helios.plugios;
+
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import fr.helios.plugios.listener.PlugiosListener;
+import fr.helios.plugios.util.EffectBlood;
+
+public class PlugIios extends JavaPlugin
+{
+    @Override
+    public void onEnable()
+    {
+        super.onEnable();
+        PluginManager pm = getServer().getPluginManager();
+        pm.registerEvents(new PlugiosListener(this), this);
+        pm.registerEvents(new EffectBlood(this), this);
+    }
+    
+    @Override
+    public void onDisable()
+    {
+        super.onDisable();
+    }
+}

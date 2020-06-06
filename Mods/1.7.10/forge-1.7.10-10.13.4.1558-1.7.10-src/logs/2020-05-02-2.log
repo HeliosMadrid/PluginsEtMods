@@ -1,0 +1,24 @@
+[13:38:03] [main/INFO]: Setting user: helios_38
+[13:38:04] [Client thread/INFO]: LWJGL Version: 2.9.1
+[13:38:10] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Astral Mod
+[13:38:11] [Sound Library Loader/INFO]: Sound engine started
+[13:38:11] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[13:38:11] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[13:38:12] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Astral Mod
+[13:38:12] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[13:38:12] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[13:38:13] [Sound Library Loader/INFO]: Sound engine started
+[13:38:17] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[13:38:17] [Server thread/INFO]: Generating keypair
+[13:38:18] [Server thread/INFO]: Preparing start region for level 0
+[13:38:18] [Server thread/INFO]: Changing view distance to 12, from 10
+[13:38:19] [Server thread/INFO]: helios_38[local:E:b44bef27] logged in with entity id 583 at (-201.4712900054989, 67.0, 226.87409962376452)
+[13:38:19] [Server thread/INFO]: helios_38 a rejoint la partie
+[13:38:19] [Server thread/INFO]: Saving and pausing game...
+[13:38:19] [Server thread/INFO]: Saving chunks for level 'Astral Test'/Overworld
+[13:38:19] [Server thread/INFO]: Saving chunks for level 'Astral Test'/Nether
+[13:38:19] [Server thread/INFO]: Saving chunks for level 'Astral Test'/The End
+[13:38:24] [Server thread/INFO]: Saving and pausing game...
+[13:38:24] [Server thread/INFO]: Saving chunks for level 'Astral Test'/Overworld
+[13:38:24] [Server thread/INFO]: Saving chunks for level 'Astral Test'/Nether
+[13:38:24] [Server thread/INFO]: Saving chunks for level 'Astral Test'/The End

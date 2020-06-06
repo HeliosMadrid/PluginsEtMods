@@ -1,0 +1,47 @@
+package fr.helios.astralplugin;
+
+import java.util.Arrays;
+
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+public class AstralPluginListener implements Listener
+{
+    @EventHandler
+    public void onJoin(PlayerJoinEvent event)
+    {
+        Player player = event.getPlayer();
+        
+        ItemStack customSword = new ItemStack(Material.DIAMOND_SWORD, 1);
+        ItemStack customWool = new ItemStack(Material.WOOL, 32, (byte)14);
+        
+        ItemMeta customM = customSword.getItemMeta();
+        
+        player.getInventory().clear();     
+        
+        customM.setDisplayName("§1Ma super épée");
+        customM.setLore(Arrays.asList("appartient à :" + player.getName(), "enchantements :" + customSword.getEnchantments(), "sert à : tuer", "Exp:" + player.getExp()));
+        customM.addEnchant(Enchantment.DAMAGE_ALL, 200, true);
+        customM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        
+        customSword.setItemMeta(customM);
+        
+        player.getInventory().setItemInMainHand(customSword);
+        player.getInventory().setHelmet(customWool);
+        player.updateInventory();
+    }
+    
+    @EventHandler
+    public void onInteract(PlayerInteractEvent event)
+    {
+        
+    }
+}

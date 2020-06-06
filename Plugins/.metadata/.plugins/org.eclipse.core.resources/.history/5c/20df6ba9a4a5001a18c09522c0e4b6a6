@@ -1,0 +1,49 @@
+package fr.helios.uhcrunios.event.events;
+
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+
+import fr.helios.uhcrunios.UHCRunIos;
+
+public class UHCJoin implements Listener
+{
+    static int task;
+    static int timer = 10;
+    
+    @EventHandler
+    public void onJoin(PlayerJoinEvent event)
+    {
+        Player player = event.getPlayer();
+        
+        if(!UHCRunIos.getInstance().playersInGame.contains(player.getUniqueId()))
+        {
+            UHCRunIos.getInstance().playersInGame.add(player.getUniqueId());
+            
+            if(UHCRunIos.getInstance().playersInGame.size() == 2)
+            {
+                task = Bukkit.getScheduler().scheduleSyncRepeatingTask(UHCRunIos.getInstance(), new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        timer--;
+                        
+                        if(timer == 30 && timer == 15 && timer == 10 && timer == 5 && timer == 4 && timer == 3 && timer == 2 && timer == 1)
+                        {
+                            Bukkit.broadcastMessage("Il ne reste plus que §2" + timer + " avant le début du §4JEU");
+                        }
+                        
+                        else if(timer == 0)
+                        {
+                            Bukkit.getScheduler().cancelTask(task);
+                        }
+                    }
+                    
+                }, 20, 20);
+            }
+        }
+    }
+}

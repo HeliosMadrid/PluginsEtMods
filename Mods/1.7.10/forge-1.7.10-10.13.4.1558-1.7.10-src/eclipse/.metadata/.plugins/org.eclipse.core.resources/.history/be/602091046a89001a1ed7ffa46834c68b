@@ -1,0 +1,113 @@
+package fr.helios.astral.blocks;
+
+import fr.helios.astral.proxy.ClientProxy;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
+
+public class BlockAstralCoffre extends Block
+{
+
+    public BlockAstralCoffre(Material material)
+    {
+        super(material);
+        this.setCreativeTab(CreativeTabs.tabDecorations);
+        this.setBlockBounds(0.2F, 0.1F, 0.2F, 0.9F, 1.0F, 0.9F);
+    }
+
+    @Override
+    public boolean hasTileEntity(int metadata)
+    {
+        return true;
+    }
+
+    @Override
+    public TileEntity createTileEntity(World world, int metadata)
+    {
+        return new TileEntityAstral();
+    }
+    
+    public boolean isOpaqueCube()
+    {
+        return false;
+    }
+
+    public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
+
+    public int getRenderType()
+    {
+        return ClientProxy.tesrRenderId;
+    }
+    
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase living, ItemStack stack)
+    {
+        if(stack.getItemDamage() == 0)
+        {
+            TileEntity tile = world.getTileEntity(x, y, z);
+            if(tile instanceof TileEntityAstral)
+            {
+                int direction = MathHelper.floor_double((double)(living.rotationYaw * 4.0F / 360.0F) + 2.50) & 3;
+                ((TileEntityAstral)tile).setDirection((byte)direction);
+            }
+        }
+    }
+    
+    @Override
+    public boolean rotateBlock(World world, int x, int y, int z, ForgeDirection axis)
+    {
+        if((axis == ForgeDirection.UP || axis == ForgeDirection.DOWN) && !world.isRemote && world.isRemote && world.getBlockMetadata(x, y, z) == 0)
+        {
+            TileEntity tile = world.getTileEntity(x, y, z);
+            if(tile instanceof TileEntityAstral)
+            {
+                TileEntityAstral tileAstral = (TileEntityAstral)tile;
+                byte direction = tileAstral.getDirection();
+                direction++;
+                if(direction > 3)
+                {
+                    direction = 0;
+                }
+                tileAstral.setDirection(direction);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ)
+    {
+        if(!world.isRemote)    
+        {    
+        TileEntity tile = world.getTileEntity(x, y, z);
+        if(tile instanceof TileEntityAstral)
+        {
+            TileEntityAstral tileAstral = (TileEntityAstral)tile;
+            if(side == 0)
+            {
+                tileAstral.decrease();
+            }
+            else if(side == 1)
+            {
+                tileAstral.increase();
+            }
+            player.addChatMessage(new ChatComponentTranslation("tile.coffre_astral.number", tileAstral.getNumber()));
+            return true;
+            }   
+        }
+        return false;
+    }
+
+}

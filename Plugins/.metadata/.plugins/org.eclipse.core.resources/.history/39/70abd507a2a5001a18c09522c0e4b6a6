@@ -1,0 +1,19 @@
+package fr.helios.uhcrunios.event;
+
+import org.bukkit.Bukkit;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.PluginManager;
+
+import fr.helios.uhcrunios.UHCRunIos;
+
+public class EventsManager implements Listener
+{
+
+    public static void registerEvents(UHCRunIos main)
+    {
+        PluginManager pm = Bukkit.getPluginManager();
+        
+        pm.registerEvents(new UHC, arg1);
+    }
+
+}

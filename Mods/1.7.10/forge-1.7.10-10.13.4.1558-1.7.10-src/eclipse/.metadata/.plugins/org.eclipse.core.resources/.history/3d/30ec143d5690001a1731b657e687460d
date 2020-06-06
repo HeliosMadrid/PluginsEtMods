@@ -1,0 +1,115 @@
+package fr.helios.astral.utils.generation;
+
+import java.util.List;
+import java.util.Random;
+
+import net.minecraft.block.Block;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraftforge.event.terraingen.TerrainGen;
+import net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.*;
+import net.minecraft.util.IProgressUpdate;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.ChunkPosition;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldType;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.MapGenBase;
+import net.minecraft.world.gen.MapGenCaves;
+import net.minecraft.world.gen.MapGenRavine;
+import net.minecraft.world.gen.NoiseGenerator;
+import net.minecraft.world.gen.NoiseGeneratorOctaves;
+import net.minecraft.world.gen.NoiseGeneratorPerlin;
+import net.minecraft.world.gen.structure.MapGenMineshaft;
+import net.minecraft.world.gen.structure.MapGenScatteredFeature;
+
+public class AstralChunkProvider implements IChunkProvider
+{
+    
+    private Random rand;
+    private NoiseGeneratorOctaves noiseGen1;
+    private NoiseGeneratorOctaves noiseGen2;
+    private NoiseGeneratorOctaves noiseGen3;
+    private NoiseGeneratorPerlin noiseGen4;
+    public NoiseGeneratorOctaves noiseGen5;
+    public NoiseGeneratorOctaves noiseGen6;
+    public NoiseGeneratorOctaves mobSpawnerNoise;
+    private World worldObj;
+    private WorldType worldType;
+    private final double[] noiseArray;
+    private final float[] parabolicField;
+    private final boolean mapFeaturesEnabled;
+    
+    private MapGenBase caveGeerator = new MapGenCaves();
+    private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
+    private MapGenScatteredFeature scatteredFeatureGenerator= new MapGenScatteredFeature();
+    private MapGenBase ravineGenerator = new MapGenRavine();
+    
+    private double[] stoneNoise = new double[256];
+    private BiomeGenBase[] biomesForGeneration;
+    double[] noiseData1;
+    double[] noiseData2;
+    double[] noiseData3;
+    double[] noiseData4;
+    
+    public AstralChunkProvider(World world, long seed, boolean features)
+    {
+        this.worldObj = world;
+        this.mapFeaturesEnabled = features;
+        this.worldType = world.getWorldInfo().getTerrainType();
+        this.rand = new Random(seed);
+        this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
+        this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
+        this.noiseGen3 = new NoiseGeneratorOctaves(this.rand, 8);
+        this.noiseGen4 = new NoiseGeneratorPerlin(this.rand, 4);
+        this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
+        this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
+        this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
+        this.noiseArray = new double[852];
+        this.parabolicField = new float[25];
+        
+        for(int j = -2; j <= 2; ++j)
+        {
+            for(int k = -2; k <= 2; ++k)
+            {
+                float f = 10.0F / MathHelper.sqrt_float((float)(j * j + k * k) + 0.2F);
+                this.parabolicField[j + 2 + (k + 2) * 5] = f;
+            }
+        }
+        
+        NoiseGenerator[] noiseGens = {noiseGen1, noiseGen2, noiseGen3, noiseGen4, noiseGen5, noiseGen6, mobSpawnerNoise};
+        noiseGens = TerrainGen.getModdedNoiseGenerators(world, this.rand, noiseGens);
+        this.noiseGen1 = (NoiseGeneratorOctaves)noiseGens[0];
+        this.noiseGen2 = (NoiseGeneratorOctaves)noiseGens[1];
+        this.noiseGen3 = (NoiseGeneratorOctaves)noiseGens[2];
+        this.noiseGen4 = (NoiseGeneratorPerlin)noiseGens[3];
+        this.noiseGen5 = (NoiseGeneratorOctaves)noiseGens[4];
+        this.noiseGen6 = (NoiseGeneratorOctaves)noiseGens[5];
+        this.mobSpawnerNoise = (NoiseGeneratorOctaves)noiseGens[6];
+    }
+    
+    public void func_147424_a(int Xchunks, int Zchunks, Block[] topBlock)
+    {
+        byte b0 = 63;
+        this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, Xchunks * 4 - 2, Zchunks * 4 - 2, 10, 10);
+        this.func_147423_a(Xchunks * 4, 0, Zchunks * 4);
+        
+        final Random rand = new Random();
+        
+        for(int k = 0; k < 4; ++k)
+        {
+            int l = k * 5;
+            int i1 = (k + 1) * 5;
+            
+            for(int j1 = 0; j1 < 4; ++j1)
+            {
+                int k1 = (l + j1) * 33;
+                int l1 = (l + j1 + 1) * 33;
+                int i2 = (i1 + j1) * 33;
+                int j2 = (i1 + j1 + 1) * 33;
+            }
+        }
+    }
+
+}

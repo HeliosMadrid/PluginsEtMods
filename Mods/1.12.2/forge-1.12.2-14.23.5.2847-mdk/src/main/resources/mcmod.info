@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dragon",
+  "name": "Dragonique Mod",
+  "description": "Mod qui rajoute la pierre de dragon.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Helios_38"],
+  "credits": "Test",
+  "logoFile": "dragon.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

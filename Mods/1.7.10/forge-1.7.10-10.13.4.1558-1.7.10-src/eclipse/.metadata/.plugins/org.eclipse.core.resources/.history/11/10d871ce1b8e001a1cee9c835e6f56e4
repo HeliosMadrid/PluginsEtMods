@@ -1,0 +1,133 @@
+package fr.helios.astral;
+
+import  java.awt.Color;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import fr.helios.astral.blocks.BlockAstral;
+import fr.helios.astral.blocks.BlockAstral2;
+import fr.helios.astral.blocks.BlockAstralCoffre;
+import fr.helios.astral.blocks.BlockAstralMetadata;
+import fr.helios.astral.blocks.BlockAstralOrient;
+import fr.helios.astral.blocks.BlockOreAstral;
+import fr.helios.astral.blocks.ItemBlockMetadataAstral;
+import fr.helios.astral.blocks.TileEntityAstral;
+import fr.helios.astral.items.ItemGemmes;
+import fr.helios.astral.items.ItemsAstral;
+import fr.helios.astral.items.material.ItemArmorAstral;
+import fr.helios.astral.items.material.ItemAstralAxe;
+import fr.helios.astral.items.material.ItemAstralHoe;
+import fr.helios.astral.items.material.ItemAstralPickaxe;
+import fr.helios.astral.items.material.ItemAstralShovel;
+import fr.helios.astral.items.material.ItemAstralSword;
+import fr.helios.astral.mob.EntityJoomda;
+import fr.helios.astral.mob.EntityMobAstral;
+import fr.helios.astral.mob.boss.EntityDivinea;
+import fr.helios.astral.mob.boss.SF.EntityMobAstralSF;
+import fr.helios.astral.proxy.ServerProxy;
+import fr.helios.astral.utils.AstralCreativeTab;
+import fr.helios.astral.utils.GuiHandlerAstral;
+import fr.helios.astral.utils.LivingEventHandler;
+import fr.helios.astral.utils.generation.StructureGenerator;
+import fr.helios.astral.utils.generation.WorldGeneration;
+import fr.helios.astral.utils.generation.WorldTypeAstral;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
+
+@Mod(modid = References.MODID, name = References.NAME, version = References.VERSION, acceptedMinecraftVersions = References.MINECRAFT_VERSION)
+public class ModAstral 
+{   
+    public static CreativeTabs astralCreativeTab = new AstralCreativeTab("astral_creative_tab");
+    public static Block crystal_astrale, lumiere_pur, fragement_etoile, coffre_astral, souffleur, gemme;
+    public static Item luminous_wand, helmet_astral, chestpalte_astral, leggings_astral, boots_astral, 
+    sword_astral, pickaxe_astral, axe_astral, hoe_astral, shovel_astral, gemmes;
+    public static ToolMaterial toolAstral = EnumHelper.addToolMaterial("toolAstral", 3, 1000, 12.0F, 15.0F, 30);
+    public static ArmorMaterial armorAstral = EnumHelper.addArmorMaterial("armorAstral", 1000, new int[]{10, 30, 20, 8}, 30);
+    WorldGeneration worldgeneration = new WorldGeneration();
+    StructureGenerator structureGenerator = new StructureGenerator();
+    BiomListAstral.BiomList();
+    
+    @Instance(References.MODID)
+    public static ModAstral instance;
+    
+    @SidedProxy(clientSide = References.CLIENT_PROXY, serverSide = References.SERVER_PROXY, modId = References.MODID)
+    public static ServerProxy proxy;
+    
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        souffleur = new BlockAstralOrient(Material.rock).setBlockName("souffleur");
+        gemme = new BlockOreAstral(Material.rock).setBlockName("gemme").setBlockTextureName(References.MODID + ":gemme").setHardness(5F);
+        crystal_astrale = new BlockAstral(Material.rock).setBlockName("crystal_astrale").setBlockTextureName(References.MODID + ":crystal_astrale").setCreativeTab(CreativeTabs.tabDecorations).setHardness(10.0F);
+        coffre_astral = new BlockAstralCoffre(Material.rock).setBlockName("coffre_astral").setBlockTextureName(References.MODID + ":coffre_astral").setCreativeTab(CreativeTabs.tabDecorations);
+        lumiere_pur = new BlockAstralMetadata().setBlockName("lumiere_pur").setHardness(1.5F).setResistance(10.0F).setCreativeTab(CreativeTabs.tabDecorations).setLightLevel(1.0F).setLightOpacity((int)10F);
+        fragement_etoile = new BlockAstral2(Material.rock).setBlockName("fragement_etoile").setCreativeTab(CreativeTabs.tabBlock);
+        luminous_wand = new ItemsAstral().setUnlocalizedName("luminous_wand").setTextureName(References.MODID + ":luminous_wand").setCreativeTab(CreativeTabs.tabTools);
+        helmet_astral = new ItemArmorAstral(armorAstral, 0).setUnlocalizedName("helmet_astral").setTextureName(References.MODID + ":helmet_astral");
+        chestpalte_astral = new ItemArmorAstral(armorAstral, 1).setUnlocalizedName("chestpalte_astral").setTextureName(References.MODID + ":chestpalte_astral");
+        leggings_astral = new ItemArmorAstral(armorAstral, 2).setUnlocalizedName("leggings_astral").setTextureName(References.MODID + ":leggings_astral");
+        boots_astral = new ItemArmorAstral(armorAstral, 3).setUnlocalizedName("boots_astral").setTextureName(References.MODID + ":boots_astral");
+        sword_astral = new ItemAstralSword(toolAstral).setUnlocalizedName("sword_astral").setTextureName(References.MODID + ":sword_astral").setCreativeTab(CreativeTabs.tabCombat);
+        pickaxe_astral = new ItemAstralPickaxe(toolAstral).setUnlocalizedName("pickaxe_astral").setTextureName(References.MODID + ":pickaxe_astral").setCreativeTab(CreativeTabs.tabTools);
+        axe_astral = new ItemAstralAxe(toolAstral).setUnlocalizedName("axe_astral").setTextureName(References.MODID + ":axe_astral").setCreativeTab(CreativeTabs.tabTools);
+        hoe_astral = new ItemAstralHoe(toolAstral).setUnlocalizedName("hoe_astral").setTextureName(References.MODID + ":hoe_astral").setCreativeTab(CreativeTabs.tabTools);
+        shovel_astral = new ItemAstralShovel(toolAstral).setUnlocalizedName("shovel_astral").setTextureName(References.MODID + ":shovel_astral").setCreativeTab(CreativeTabs.tabTools);
+        gemmes = new ItemGemmes().setUnlocalizedName("gemmes").setTextureName(References.MODID + ":gemmes").setCreativeTab(ModAstral.astralCreativeTab);
+    }
+    
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+        proxy.registerRender();
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandlerAstral());
+        GameRegistry.registerWorldGenerator(worldgeneration, 0);
+        GameRegistry.registerWorldGenerator(structureGenerator, 0);
+        GameRegistry.registerBlock(crystal_astrale, "crystal_astrale");
+        GameRegistry.registerBlock(gemme, "gemme");
+        GameRegistry.registerBlock(souffleur, "souffleur");
+        GameRegistry.registerBlock(coffre_astral, "coffre_astral");
+        GameRegistry.registerBlock(lumiere_pur, ItemBlockMetadataAstral.class, "lumiere_pur");
+        GameRegistry.registerTileEntity(TileEntityAstral.class, References.MODID + ":coffre_astral");
+        GameRegistry.registerBlock(fragement_etoile, "fragement_etoile");
+        GameRegistry.registerItem(luminous_wand, "luminous_wand");
+        GameRegistry.registerItem(helmet_astral, "helmet_astral");
+        GameRegistry.registerItem(chestpalte_astral, "chestpalte_astral");
+        GameRegistry.registerItem(leggings_astral, "leggings_astral");
+        GameRegistry.registerItem(boots_astral, "boots_astral");
+        GameRegistry.registerItem(sword_astral, "sword_astral");
+        GameRegistry.registerItem(pickaxe_astral, "pickaxe_astral");
+        GameRegistry.registerItem(axe_astral, "axe_astral");
+        GameRegistry.registerItem(hoe_astral, "hoe_astral");
+        GameRegistry.registerItem(shovel_astral, "shovel_astral");
+        GameRegistry.registerItem(gemmes, "gemmes");
+        EntityRegistry.registerGlobalEntityID(EntityMobAstral.class, "mobAstral", EntityRegistry.findGlobalUniqueEntityId(), new Color(0, 255, 0).getRGB(), new Color(255, 0, 0).getRGB());
+        EntityRegistry.registerModEntity(EntityMobAstral.class, "mobAstral", 420, this.instance, 40, 1, true);
+        EntityRegistry.registerGlobalEntityID(EntityJoomda.class, "joomda", EntityRegistry.findGlobalUniqueEntityId(), new Color(0, 255, 255).getRGB(), new Color(255, 0, 255).getRGB());
+        EntityRegistry.registerModEntity(EntityJoomda.class, "joomda", 420, this.instance, 40, 1, true);
+        EntityRegistry.registerGlobalEntityID(EntityDivinea.class, "divinea", EntityRegistry.findGlobalUniqueEntityId(), new Color(0255, 255, 255).getRGB(), new Color(255, 0, 0).getRGB());
+        EntityRegistry.registerModEntity(EntityDivinea.class, "divinea", 420, this.instance, 40, 1, true);
+        EntityRegistry.registerGlobalEntityID(EntityMobAstralSF.class, "agents_lunaires", EntityRegistry.findGlobalUniqueEntityId(), new Color(0, 255, 0).getRGB(), new Color(255, 255, 0).getRGB());
+        EntityRegistry.registerModEntity(EntityMobAstralSF.class, "agents_lunaires", 420, this.instance, 40, 1, true);
+        MinecraftForge.EVENT_BUS.register(new LivingEventHandler());
+    }
+  
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+        BiomListAstral.worldTypeAstral = new WorldTypeAstral;
+    }
+}

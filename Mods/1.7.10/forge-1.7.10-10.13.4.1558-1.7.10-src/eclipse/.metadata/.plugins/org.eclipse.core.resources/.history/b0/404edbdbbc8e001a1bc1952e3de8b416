@@ -1,0 +1,17 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.WorldType;
+import net.minecraft.world.gen.layer.GenLayer;
+
+public class WorldTypeAstral extends WorldType
+{
+    public WorldTypeAstral()
+    {
+        
+    }
+    
+    public GenLayer getBiomeLayer(long worldSeed, GenLayer parenLayer)
+    {
+        
+    }
+}

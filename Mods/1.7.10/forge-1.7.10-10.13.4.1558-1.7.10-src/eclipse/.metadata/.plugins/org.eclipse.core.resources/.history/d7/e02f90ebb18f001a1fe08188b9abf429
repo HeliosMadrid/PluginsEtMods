@@ -1,0 +1,24 @@
+package fr.helios.astral.utils.event;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
+
+public class PlayerEventHandler
+{
+    @SubscribeEvent
+    public void onPlayerLogged(cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event)
+    {
+        
+    }
+    
+    @SubscribeEvent
+    public void onNameFormat(net.minecraftforge.event.entity.player.PlayerEvent.NameFormat event)
+    {
+        if(event.username.equals("Helios_38"))
+        {
+            event.entityPlayer.getEntityData().getString("team") +
+            event.displayname = "Staff MFF - robin4002";
+        }
+    }
+}

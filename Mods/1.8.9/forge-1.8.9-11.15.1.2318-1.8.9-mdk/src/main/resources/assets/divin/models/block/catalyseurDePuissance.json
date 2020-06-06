@@ -1,0 +1,6 @@
+{
+    "parent": "builtin/entity",
+    "textures": {
+        "all": "divin:blocks/catalyseurDePuissance"
+    }
+}

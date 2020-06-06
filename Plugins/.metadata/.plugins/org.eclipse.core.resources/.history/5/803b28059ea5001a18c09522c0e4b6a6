@@ -1,0 +1,8 @@
+package fr.helios.plugios.util;
+
+import org.bukkit.event.Listener;
+
+public class EventCustom implements Listener
+{
+    
+}

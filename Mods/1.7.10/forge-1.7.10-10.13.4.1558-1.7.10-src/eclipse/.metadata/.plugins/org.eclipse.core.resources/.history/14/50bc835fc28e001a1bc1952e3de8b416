@@ -1,0 +1,41 @@
+package fr.helios.astral.utils.generation;
+
+import java.util.ArrayList
+import java.util.List;
+
+import net.minecraft.world.World;
+import net.minecraft.world.WorldType;
+import net.minecraft.world.biome.BiomeCache;
+import net.minecraft.world.biome.WorldChunkManager;
+import net.minecraft.world.gen.layer.GenLayer;
+
+public class WorldChunkManagerAstral extends WorldChunkManager
+{
+	    private GenLayer myGenBiomes;
+    	private GenLayer myBiomeIndexLayer;
+    	private BiomeCache myBiomeCache;
+    	private List <biomegenbase>myBiomesToSpawnIn;
+    	
+    	public WorldChunkManagerAstral()
+    	{
+    	    this.myBiomeCache = new BiomeCache(this);
+    	    this.myBiomesToSpawnIn = new ArrayList<biomegenbase>();
+            this.myBiomesToSpawnIn.add(StarLands); 
+    	}
+    	
+        public WorldChunkManagerAstral(World world)
+        {
+            this(world.getSeed(), world.provider.terrainType);
+        }
+ 
+        public WorldChunkManagerAstral(World world)
+        {
+            this(world.getSeed(), world.provider.terrainType);
+        }
+
+        public List <biomegenbase>getBiomesToSpawnIn()
+        {
+            return this.myBiomesToSpawnIn;
+        }
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;PanneauIos.java&apos; to &apos;HeliosPlugin/src/fr.helios.plugios.util&apos;&#x0D;&#x0A;- Original project: &apos;HeliosPlugin&apos;&#x0D;&#x0A;- Destination element: &apos;HeliosPlugin/src/fr.helios.plugios.util&apos;&#x0D;&#x0A;- Original element: &apos;fr.helios.plugios.PanneauIos.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;fr.helios.plugios.util" element1="/src&lt;fr.helios.plugios{PanneauIos.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1590501653277" units="1" version="1.0"/>
+</session>

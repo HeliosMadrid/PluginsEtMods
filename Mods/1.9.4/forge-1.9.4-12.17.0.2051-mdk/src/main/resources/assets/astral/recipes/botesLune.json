@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "D D",
+        "D D"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:diamond_block",
+			"data": 0
+        },
+        "D": {
+            "item": "astral:fragementLunaire",
+			"data": 0
+        }
+    },
+    "result": {
+        "item": "astral:botesLune",
+		"data": 0,
+        "count": 1
+    }
+}

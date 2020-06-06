@@ -1,0 +1,8 @@
+package fr.helios.astral.utils;
+
+import net.minecraftforge.common.IExtendedEntityProperties;
+
+public class ExtendedEntityPropAstral implements IExtendedEntityProperties
+{
+
+}

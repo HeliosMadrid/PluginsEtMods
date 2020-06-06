@@ -1,0 +1,19 @@
+package fr.helios.uhcrunios.game;
+
+public enum UHCState
+{
+    WAIT(true), GAME(false), GAMEPVP(false), FINISH(false);
+
+    private boolean canJoin;
+    private static UHCState currentState;
+    
+    UHCState(boolean canJoin)
+    {
+        this.canJoin = canJoin;
+    }
+    
+    public boolean isCanJoin()
+    {
+        return canJoin
+    }
+}

@@ -1,0 +1,13 @@
+package fr.helios.plugios;
+
+import org.bukkit.event.Listener;
+
+public class MenuIos implements Listener
+{
+
+    public MenuIos(PlugIios plugIios)
+    {
+        
+    }
+
+}

@@ -1,0 +1,37 @@
+tile.crystal_astrale.name= Crystale de lumière astrale
+tile.coffre_astral.name= Coffre Astral
+tile.souffleur.name= Souffleur astral
+tile.fragement_etoile.name= Fragement d'étoile
+tile.lumiere_pur.lumiere1.name= Lumière verte
+tile.lumiere_pur.lumiere2.name= Lumière rouge
+tile.lumiere_pur.lumiere3.name= Lumière bleu
+tile.lumiere_pur.lumiere4.name= Lumière rose
+tile.gemme.name= Minerai de gemme Astrales
+tile.astres= Astres
+entity.mobAstral.name= Lumière de Divinea
+entity.joomda.name= Joomda
+entity.agents_lunaires.name= Agents lunaires
+entity.divinea.name= Divinea
+
+item.luminous_wand.name= Baquette De la lumière
+item.gemmes.name= Gemme Astrale
+item.helmet_astral.name= Casque Astral
+item.chestpalte_astral.name= Plastron Astral
+item.leggings_astral.name= Jambières Astrales
+item.boots_astral.name= Bottes Astrales
+item.sword_astral.name= Epée des Astres
+item.pickaxe_astral.name= Pioche des Astres 
+item.axe_astral.name= Hache des Astres 
+item.hoe_astral.name= Houe des Astres 
+item.shovel_astral.name= Pelle des Astres
+
+sword.mode.message.0=Enflammer les joueurs
+sword.mode.message.1=Enflammer les monstres
+sword.mode.message.2=Enflammer les animaux
+
+tile.coffre_astral.number= Valeur : %d
+
+enchantment.echantAstral = Enchantement De La peste Noir
+
+#CreativeTabs
+itemGroup.astral_creative_tab= Astral 

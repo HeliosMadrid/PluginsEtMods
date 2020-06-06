@@ -1,0 +1,13 @@
+package fr.helios.astral.utils.event;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+
+public class EntityEventHandler
+{
+    public void onEntityJoin(EntityJoinWorldEvent event)
+    {
+        
+    }
+}

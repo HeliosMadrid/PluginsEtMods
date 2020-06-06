@@ -1,0 +1,24 @@
+package fr.helios.astral.utils;
+
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnumEnchantmentType;
+
+public class EnchantementAstral extends Enchantment
+{
+    
+    int level = EnchantmentHelper.getEnchantmentLevel(120, entity.getHeldItem());
+    event.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 300 * level, 1 * level));
+    EnchantmentHelper.getEnchantmentLevel(id, itemstack);
+
+    public EnchantementAstral()
+    {
+        super(120, 0, EnumEnchantmentType.weapon);
+    }
+    
+    public int getMaxLevel()
+    {
+        return 3;
+    }
+    
+}

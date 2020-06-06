@@ -1,0 +1,12 @@
+package fr.helios.astral.utils.event;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+public class EntityEventHandler
+{
+    public void onEntityJoin()
+    {
+        
+    }
+}

@@ -1,0 +1,32 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.Teleporter;
+
+public class AstralTeleporter extends Teleporter
+{
+    private final WorldServer worldServerInstance;
+    private final Random random;
+    private final LongHashMap destinationCoordinateCache = new LongHashMap();
+ 
+    private final List destinationCoordinateKeys = new ArrayList();
+ 
+    public TutoTeleporter(WorldServer worldServer)
+    {
+ 
+    }
+ 
+    public void placeInPortal(Entity entity, double x, double y, double z, float rotationYaw)
+    {
+ 
+    }
+ 
+    public boolean placeInExistingPortal(Entity entity, double x, double y, double z, float rotationYaw)
+    {
+ 
+    }
+ 
+    public boolean makePortal(Entity entity)
+    {
+ 
+    }
+}

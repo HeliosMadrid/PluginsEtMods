@@ -1,0 +1,8 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.biome.WorldChunkManager;
+
+public class WorldChunkManagerAstral extends WorldChunkManager
+{
+
+}

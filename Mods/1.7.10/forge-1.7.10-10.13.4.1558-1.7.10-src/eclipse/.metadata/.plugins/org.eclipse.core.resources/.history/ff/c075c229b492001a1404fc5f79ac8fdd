@@ -1,0 +1,6 @@
+package fr.helios.astral.utils.event;
+
+public class EnchantementAstralManager
+{
+
+}

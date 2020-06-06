@@ -1,0 +1,16 @@
+package fr.helios.uhcrunios.util;
+
+import java.util.Random;
+
+import org.bukkit.entity.Player;
+
+public class UHCTeleport
+{
+    public static void tpRandom(Player player)
+    {
+        Random r = new Random();
+        int x;
+        int y = 100;
+        int z;
+    }
+}

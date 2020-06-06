@@ -1,0 +1,8 @@
+package fr.helios.astral.utils;
+
+import cpw.mods.fml.common.IWorldGenerator;
+
+public class WorldGeneration implements IWorldGenerator
+{
+
+}

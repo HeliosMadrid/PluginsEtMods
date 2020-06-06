@@ -1,0 +1,4 @@
+name: VaultPlugin
+version: 1.0
+author: Helios_38
+main: fr.helios.vault.Vault

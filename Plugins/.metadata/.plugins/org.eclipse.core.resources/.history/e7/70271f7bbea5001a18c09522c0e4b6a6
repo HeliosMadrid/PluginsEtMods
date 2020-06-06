@@ -1,0 +1,10 @@
+package fr.helios.uhcrunios.util;
+
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+
+public class UHCSkullRegen implements Listener
+{
+    @EventHandler
+    public void 
+}

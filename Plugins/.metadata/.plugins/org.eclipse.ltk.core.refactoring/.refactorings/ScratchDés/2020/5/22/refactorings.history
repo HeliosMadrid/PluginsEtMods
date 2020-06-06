@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;result1&apos; in &apos;fr.elliot.sratch.Pourcentage.CalculDuPoucentage1(...)&apos; to &apos;result&apos;&#x0D;&#x0A;- Original project: &apos;ScratchDés&apos;&#x0D;&#x0A;- Original element: &apos;fr.elliot.sratch.Pourcentage.CalculDuPoucentage1(int, int, int).result1&apos;&#x0D;&#x0A;- Renamed element: &apos;result1&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;result1&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;fr.elliot.sratch{Pourcentage.java[Pourcentage~CalculDuPoucentage1~I~I~I@result1!311!321!315!321!I!0!true" name="result" references="true" stamp="1590584155226" version="1.0"/>
+</session>

@@ -1,0 +1,120 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 01/05/20 18:22
+Description: Rendering entity in world
+
+java.lang.ClassCastException: fr.helios.astral.mob.EntityMobAstral cannot be cast to net.minecraft.entity.monster.EntityBlaze
+	at net.minecraft.client.renderer.entity.RenderBlaze.doRender(RenderBlaze.java:90)
+	at net.minecraft.client.renderer.entity.RenderManager.func_147939_a(RenderManager.java:300)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntityStatic(RenderManager.java:278)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntitySimple(RenderManager.java:251)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:527)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1087)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.renderer.entity.RenderBlaze.doRender(RenderBlaze.java:90)
+
+-- Entity being rendered --
+Details:
+	Entity Type: mobAstral (fr.helios.astral.mob.EntityMobAstral)
+	Entity ID: 4307
+	Entity Name:  Lumière de Divinea
+	Entity's Exact location: -181,50, 75,00, 250,50
+	Entity's Block location: World: (-182,75,250), Chunk: (at 10,4,10 in -12,15; contains blocks -192,0,240 to -177,255,255), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0,00, -0,08, 0,00
+
+-- Renderer details --
+Details:
+	Assigned renderer: fr.helios.astral.mob.RenderMobAstral@7556a83e
+	Location: 1,30,-3,50,1,31 - World: (1,-4,1), Chunk: (at 1,-1,1 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Rotation: 144.84375
+	Delta: 0.009596944
+Stacktrace:
+	at net.minecraft.client.renderer.entity.RenderManager.func_147939_a(RenderManager.java:300)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntityStatic(RenderManager.java:278)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntitySimple(RenderManager.java:251)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:527)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player983'/350, l='MpServer', x=-182,80, y=78,50, z=249,19]]
+	Chunk stats: MultiplayerChunkCache: 225, 225
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-196,64,228), Chunk: (at 12,4,4 in -13,14; contains blocks -208,0,224 to -193,255,239), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 278199 game time, 1000 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: true), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 101 total; [EntitySquid['Poulpe'/256, l='MpServer', x=-149,50, y=57,00, z=246,50], EntitySquid['Poulpe'/257, l='MpServer', x=-147,19, y=54,26, z=240,13], EntityCreeper['Creeper'/258, l='MpServer', x=-150,31, y=15,00, z=271,50], EntityCreeper['Creeper'/259, l='MpServer', x=-151,28, y=15,00, z=271,50], EntitySquid['Poulpe'/272, l='MpServer', x=-138,62, y=55,38, z=188,73], EntitySquid['Poulpe'/273, l='MpServer', x=-137,65, y=52,91, z=223,02], EntitySquid['Poulpe'/274, l='MpServer', x=-134,56, y=53,16, z=213,02], EntitySquid['Poulpe'/275, l='MpServer', x=-143,55, y=49,42, z=210,24], EntitySquid['Poulpe'/276, l='MpServer', x=-133,95, y=51,52, z=220,27], EntitySquid['Poulpe'/277, l='MpServer', x=-134,94, y=47,84, z=212,10], EntitySquid['Poulpe'/278, l='MpServer', x=-132,88, y=48,78, z=216,91], EntitySquid['Poulpe'/279, l='MpServer', x=-142,02, y=51,42, z=216,96], EntitySquid['Poulpe'/280, l='MpServer', x=-142,56, y=57,75, z=231,84], EntitySquid['Poulpe'/281, l='MpServer', x=-131,41, y=56,40, z=239,23], EntitySquid['Poulpe'/282, l='MpServer', x=-140,20, y=48,38, z=238,52], EntitySquid['Poulpe'/283, l='MpServer', x=-136,39, y=54,33, z=236,99], EntityZombie['Zombie'/284, l='MpServer', x=-140,34, y=23,00, z=250,05], EntitySkeleton['Squelette'/285, l='MpServer', x=-141,06, y=23,00, z=248,53], EntitySquid['Poulpe'/286, l='MpServer', x=-143,15, y=56,78, z=248,86], EntitySquid['Poulpe'/287, l='MpServer', x=-137,35, y=54,28, z=243,92], EntityCreeper['Creeper'/288, l='MpServer', x=-135,58, y=49,00, z=293,29], EntityCreeper['Creeper'/289, l='MpServer', x=-136,47, y=50,17, z=292,41], EntityCreeper['Creeper'/47, l='MpServer', x=-262,06, y=16,00, z=196,66], EntitySkeleton['Squelette'/48, l='MpServer', x=-261,06, y=16,00, z=199,50], EntitySkeleton['Squelette'/56, l='MpServer', x=-257,59, y=31,00, z=238,06], EntityChicken['Poule'/57, l='MpServer', x=-256,41, y=62,33, z=232,56], EntitySkeleton['Squelette'/85, l='MpServer', x=-253,50, y=19,00, z=206,50], EntitySquid['Poulpe'/86, l='MpServer', x=-247,33, y=49,75, z=194,68], EntitySquid['Poulpe'/87, l='MpServer', x=-243,38, y=53,28, z=192,50], EntitySpider['Araignée'/91, l='MpServer', x=-252,13, y=19,00, z=216,72], EntityCreeper['Creeper'/93, l='MpServer', x=-246,06, y=25,00, z=239,53], EntitySkeleton['Squelette'/94, l='MpServer', x=-251,94, y=19,00, z=231,31], EntitySpider['Araignée'/95, l='MpServer', x=-244,75, y=24,00, z=238,81], EntityBat['Chauve-souris'/96, l='MpServer', x=-245,15, y=25,13, z=240,26], EntityClientPlayerMP['Player983'/350, l='MpServer', x=-182,80, y=78,50, z=249,19], EntityZombie['Zombie'/100, l='MpServer', x=-250,06, y=19,00, z=300,59], EntitySquid['Poulpe'/101, l='MpServer', x=-244,87, y=42,40, z=300,52], EntitySquid['Poulpe'/104, l='MpServer', x=-243,54, y=57,38, z=302,56], EntityBat['Chauve-souris'/109, l='MpServer', x=-237,38, y=26,80, z=177,31], EntityZombie['Zombie'/110, l='MpServer', x=-238,00, y=44,00, z=195,56], EntityCreeper['Creeper'/111, l='MpServer', x=-235,47, y=45,00, z=207,31], EntityCreeper['Creeper'/112, l='MpServer', x=-227,53, y=46,00, z=205,97], EntityCreeper['Creeper'/113, l='MpServer', x=-231,50, y=45,00, z=210,50], EntityCreeper['Creeper'/114, l='MpServer', x=-227,47, y=46,00, z=214,03], EntityZombie['Zombie'/115, l='MpServer', x=-227,50, y=45,00, z=210,50], EntityZombie['Zombie'/116, l='MpServer', x=-228,44, y=45,00, z=213,44], EntityCreeper['Creeper'/117, l='MpServer', x=-229,00, y=45,00, z=214,47], EntityCreeper['Creeper'/118, l='MpServer', x=-235,69, y=45,00, z=208,34], EntityMinecartChest['entity.MinecartChest.name'/119, l='MpServer', x=-228,34, y=67,50, z=214,50], EntitySkeleton['Squelette'/120, l='MpServer', x=-227,56, y=22,00, z=312,94], EntitySkeleton['Squelette'/121, l='MpServer', x=-232,56, y=23,00, z=317,91], EntityZombie['Zombie'/122, l='MpServer', x=-225,50, y=23,00, z=311,50], EntitySquid['Poulpe'/123, l='MpServer', x=-226,74, y=58,38, z=311,66], EntitySpider['Araignée'/124, l='MpServer', x=-236,50, y=24,00, z=325,50], EntityZombie['Zombie'/125, l='MpServer', x=-235,25, y=18,00, z=323,28], EntityCreeper['Creeper'/126, l='MpServer', x=-236,39, y=18,00, z=324,39], EntityCreeper['Creeper'/127, l='MpServer', x=-230,84, y=18,00, z=321,84], EntityItem['item.item.egg'/142, l='MpServer', x=-212,94, y=57,13, z=229,13], EntityChicken['Poule'/143, l='MpServer', x=-208,47, y=69,00, z=253,47], EntitySlime['Slime'/144, l='MpServer', x=-209,78, y=24,00, z=280,22], EntityCreeper['Creeper'/145, l='MpServer', x=-212,50, y=20,00, z=273,50], EntityCreeper['Creeper'/146, l='MpServer', x=-209,85, y=20,00, z=273,97], EntityChicken['Poule'/147, l='MpServer', x=-213,41, y=62,39, z=285,56], EntitySquid['Poulpe'/148, l='MpServer', x=-210,88, y=45,41, z=287,28], EntitySquid['Poulpe'/149, l='MpServer', x=-223,07, y=44,34, z=300,42], EntitySquid['Poulpe'/150, l='MpServer', x=-218,74, y=45,46, z=290,08], EntitySquid['Poulpe'/151, l='MpServer', x=-215,72, y=45,25, z=301,21], EntitySquid['Poulpe'/152, l='MpServer', x=-217,95, y=41,25, z=287,36], EntityBat['Chauve-souris'/153, l='MpServer', x=-209,41, y=25,00, z=313,59], EntityZombie['Zombie'/154, l='MpServer', x=-209,50, y=21,00, z=307,50], EntityZombie['Zombie'/155, l='MpServer', x=-223,50, y=23,00, z=312,50], EntitySquid['Poulpe'/156, l='MpServer', x=-213,82, y=54,22, z=306,76], EntitySquid['Poulpe'/159, l='MpServer', x=-212,36, y=57,03, z=314,11], EntityBat['Chauve-souris'/161, l='MpServer', x=-223,25, y=19,10, z=328,75], EntityZombie['Zombie'/162, l='MpServer', x=-209,47, y=20,00, z=318,34], EntityZombie['Zombie'/163, l='MpServer', x=-210,69, y=19,00, z=326,34], EntityZombie['Zombie'/164, l='MpServer', x=-210,02, y=18,00, z=330,72], EntityChicken['Poule'/187, l='MpServer', x=-202,44, y=62,40, z=183,44], EntitySquid['Poulpe'/189, l='MpServer', x=-201,67, y=50,72, z=298,27], EntitySquid['Poulpe'/190, l='MpServer', x=-203,81, y=58,38, z=299,15], EntitySkeleton['Squelette'/191, l='MpServer', x=-206,30, y=20,00, z=318,69], EntitySquid['Poulpe'/193, l='MpServer', x=-204,27, y=43,40, z=307,30], EntitySkeleton['Squelette'/194, l='MpServer', x=-207,40, y=19,17, z=321,58], EntityZombie['Zombie'/195, l='MpServer', x=-205,50, y=20,00, z=323,50], EntitySkeleton['Squelette'/196, l='MpServer', x=-207,07, y=20,00, z=319,55], EntityMobAstral[' Lumière de Divinea'/4307, l='MpServer', x=-181,50, y=75,00, z=250,50], EntitySquid['Poulpe'/215, l='MpServer', x=-187,50, y=44,35, z=187,25], EntityChicken['Poule'/222, l='MpServer', x=-183,47, y=64,00, z=204,47], EntityMobAstral[' Lumière de Divinea'/223, l='MpServer', x=-182,46, y=74,00, z=240,50], EntityCreeper['Creeper'/224, l='MpServer', x=-179,00, y=13,00, z=266,56], EntitySquid['Poulpe'/225, l='MpServer', x=-185,36, y=56,43, z=298,71], EntityChicken['Poule'/234, l='MpServer', x=-173,41, y=62,54, z=187,44], EntityChicken['Poule'/235, l='MpServer', x=-174,47, y=62,06, z=176,47], EntitySkeleton['Squelette'/238, l='MpServer', x=-162,50, y=17,00, z=272,50], EntityCreeper['Creeper'/240, l='MpServer', x=-163,03, y=18,00, z=324,50], EntityChicken['Poule'/250, l='MpServer', x=-146,53, y=62,37, z=191,53], EntitySquid['Poulpe'/251, l='MpServer', x=-151,50, y=49,38, z=211,37], EntitySquid['Poulpe'/252, l='MpServer', x=-147,58, y=54,34, z=232,53], EntitySquid['Poulpe'/253, l='MpServer', x=-149,06, y=57,01, z=237,14], EntitySquid['Poulpe'/254, l='MpServer', x=-148,48, y=58,29, z=242,22], EntitySquid['Poulpe'/255, l='MpServer', x=-147,56, y=57,22, z=241,79]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2566)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:984)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_241, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 752730480 bytes (717 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	astral{1.0} [Astral Mod] (bin) 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 450.82' Renderer: 'GeForce GTX 1650/PCIe/SSE2'
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: GeForce GTX 1650/PCIe/SSE2 GL version 4.6.0 NVIDIA 450.82, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: Français (France)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)

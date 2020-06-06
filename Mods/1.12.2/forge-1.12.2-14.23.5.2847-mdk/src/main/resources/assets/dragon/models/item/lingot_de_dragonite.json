@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "dragon:items/lingot_de_dragonite"
+    }
+}

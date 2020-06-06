@@ -1,0 +1,36 @@
+tile.crystal_astrale.name= Astrale light crystale
+tile.coffre_astral.name= Astral Chest
+tile.astres= Astres
+tile.souffleur.name= Breather
+tile.fragement_etoile.name= Star Fragement
+tile.lumiere_pur.lumiere1.name= Green light
+tile.lumiere_pur.lumiere2.name= Red light
+tile.lumiere_pur.lumiere3.name= Blue light
+tile.lumiere_pur.lumiere4.name= Pink light
+tile.gemme.name= Astral Gemmales Ore
+entity.mobAstral.name= Light of Divinea
+entity.joomda.name= Joomda
+entity.agents_lunaires.name= Luminous agents
+entity.divinea.name= Divinea
+
+item.luminous_wand.name= Luminous Wand
+item.gemmes.name= Astral Gemmales
+item.helmet_astral.name= Astral Helmet
+item.chestpalte_astral.name= Astral Chestplate
+item.leggings_astral.name=Astral Leggings
+item.boots_astral.name=Astral Boots
+item.sword_astral.name= Astral Sword
+item.pickaxe_astral.name= Astral Pickaxe
+item.axe_astral.name= Astral Axe
+item.hoe_astral.name= Astral Hoe
+item.shovel_astral.name= Astral Shovel
+
+sword.mode.message.0=Burn the player
+sword.mode.message.1=Burn the monster
+sword.mode.message.2=Burn the animals
+
+tile.coffre_astral.number= Value : %d
+
+enchantment.echantAstral = Enchantment of the black pest
+
+itemGroup.astral_creative_tab= Astral 

@@ -1,0 +1,33 @@
+package fr.elliot.sratch;
+
+
+public class Main
+{
+    private static SaisieClavier saisieClavier = new SaisieClavier();
+    
+    public static void main(String[] args)
+    {
+        System.out.println("Bonjour Monsieur Cherry ce programme est très basique car je suis à mes débuts dans le domaine de la programmation mais il simule correctement des lancer de dés");
+        
+        if(args.length >= 1)
+        {
+            saisieClavier.saisieProf("Combien de lancer voulez vous effectuer ?");
+            String nombreDeLanceer = String.valueOf(saisieClavier.getEnt());
+            saisieClavier.saisieProf("Combien de face voulez-vous pour votre premier dé ?");
+            String nombreDeFacesPourLeDe1 = String.valueOf(saisieClavier.getEnt());
+            saisieClavier.saisieProf("Combien de face voulez-vous pour votre deuxième dé ?");
+            String nombreDeFacesPourLeDe2 = String.valueOf(saisieClavier.getEnt());
+            saisieClavier.saisieProf("Quelle est le résultat que vous souhaiter vérifier en égaliter parfaite ?");
+            String resultat1 = String.valueOf(saisieClavier.getEnt());
+            saisieClavier.saisieProf("Quelle est le résultat que vous souhaiter vérifier en supérieur ou égale à ?");
+            String resultat2 = String.valueOf(saisieClavier.getEnt());
+            LancerDeDes.lanceLesDes(nombreDeLanceer, nombreDeFacesPourLeDe1, nombreDeFacesPourLeDe2, resultat1, resultat2);
+            System.out.println("Le poucentage d'obtenir " + resultat1 + " était de " + Pourcentage.CalculDuPoucentage(LancerDeDes.nombreDeFacesDuDes1, LancerDeDes.nombreDeFacesDuDes1 * LancerDeDes.nombreDeFacesDuDes2) + "% et le pourcentage de chance d'obtenir " + resultat2 + " ou plus était de " + Pourcentage.CalculDuPoucentage(LancerDeDes.nombreDeFacesDuDes1, LancerDeDes.nombreDeResultat2) + "% et vous avez fait " + LancerDeDes.nombreDeResultat2 + " de " + resultat2 + " ou +, et " + LancerDeDes.nombreDeResultat1 + " lancer qui on eu comme somme " + resultat1 + " pour un total de " + LancerDeDes.nombreDeLancerDeDes + " lancer de dés");
+        }
+        
+        else
+        {
+            System.out.println("la syntaxe est: java -Xms24M - Xmx24M - jar scratch.jar <nombre de lancer des dés>");
+        }
+    }
+}

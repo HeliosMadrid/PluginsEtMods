@@ -1,0 +1,14 @@
+package fr.helios.uhcrunios.util;
+
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
+
+public class UHCSkullRegen implements Listener
+{
+    @EventHandler
+    public void onDeath(PlayerDeathEvent event)
+    {
+        
+    }
+}

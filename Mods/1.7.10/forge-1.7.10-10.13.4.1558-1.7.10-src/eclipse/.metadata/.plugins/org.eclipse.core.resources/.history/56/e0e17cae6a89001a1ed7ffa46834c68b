@@ -1,0 +1,38 @@
+package fr.helios.astral.blocks;
+
+import org.lwjgl.opengl.GL11;
+
+import fr.helios.astral.References;
+import fr.helios.astral.utils.ModelCoffreAstral;
+import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ResourceLocation;
+
+public class TileEntityAstralSpecialrenderer extends TileEntitySpecialRenderer
+{
+    public static ModelCoffreAstral model = new ModelCoffreAstral();
+    public static ResourceLocation texture = new ResourceLocation(References.MODID, "textures/models/blocks/ModelCoffreTexture.png");
+    
+    public TileEntityAstralSpecialrenderer()
+    {
+        this.func_147497_a(TileEntityRendererDispatcher.instance);
+    }
+    @Override
+    public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float partialRenderTick)
+    {
+        this.renderTileEntityAstralAt((TileEntityAstral)tile,  x,  y,  z,  partialRenderTick);
+    }
+
+    private void renderTileEntityAstralAt(TileEntityAstral tile, double x, double y, double z, float partialRenderTick)
+    {
+        GL11.glPushMatrix();
+        GL11.glTranslated(x + 0.53F, y + 1.5F, z + 0.45F);
+        GL11.glRotatef(180, 0.0F, 0.0F, 1.0F);
+        GL11.glRotated(90F * tile.getDirection() + 180F, 0.0F, 1.0F, 0.0F);
+        this.bindTexture(texture);
+        model.renderAll();
+        GL11.glPopMatrix();
+    }
+
+}

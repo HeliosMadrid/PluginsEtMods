@@ -1,0 +1,8 @@
+package fr.helios.astral.utils;
+
+import net.minecraft.enchantment.Enchantment;
+
+public class EnchantementAstral extends Enchantment
+{
+
+}

@@ -1,0 +1,60 @@
+package fr.helios.plugios.listener;
+
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+import fr.helios.plugios.PlugIios;
+
+public class PlugiosListener implements Listener
+{
+    @SuppressWarnings("unused")
+    private PlugIios main;
+
+    public PlugiosListener(PlugIios plugIios)
+    {
+        this.main = plugIios;
+    }
+    
+    @EventHandler
+    public void onCommand(PlayerCommandPreprocessEvent event)
+    {
+        Player player = event.getPlayer();
+        String msg = event.getMessage();
+        String[] args = msg.split(" ");
+        
+        if(args[0].equalsIgnoreCase("/start"))
+        {
+            player.sendMessage("§5Bravo tu a essayé un truc sans succès");
+            player.setCustomName("Je suis §aBête");
+            player.setCustomNameVisible(true);
+            player.setDisplayName("Je suis §aBête");
+            player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10 * 20, 999), true);
+            player.setSneaking(true);
+            event.setCancelled(true);
+        }
+        
+        else if(args[0].equalsIgnoreCase("/broadcast"))
+        {
+            if(player.hasPermission("broadcast.util"))
+            {
+            player.getServer().broadcastMessage(ChatColor.AQUA + "[Annonce]" + ChatColor.GREEN + " Ceci est une annonce !");
+            }
+            else
+            {
+                player.sendMessage("§4Vous n'avez pas le droit de faire ceci");
+            }
+            event.setCancelled(true);
+        }
+        else if(args[0].equalsIgnoreCase("/permbroad"))
+        {
+            player.isPermissionSet("broadcast.util");
+            event.setCancelled(true);
+        }
+    }
+    
+}

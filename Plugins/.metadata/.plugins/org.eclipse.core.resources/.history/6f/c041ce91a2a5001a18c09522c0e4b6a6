@@ -1,0 +1,26 @@
+package fr.helios.uhcrunios;
+
+import java.util.ArrayList;
+
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import fr.helios.uhcrunios.event.EventsManager;
+
+public class UHCRunIos extends JavaPlugin
+{
+    public static UHCRunIos instance;
+    public ArrayList<Player> players;
+    
+    public static UHCRunIos getInstance()
+    {
+        return instance;
+    }
+
+    @Override
+    public void onEnable()
+    {
+        instance = this;
+        EventsManager.registerEvents(this);
+    }
+}

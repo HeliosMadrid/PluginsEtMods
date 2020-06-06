@@ -1,0 +1,12 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.biome.WorldChunkManager;
+
+public class WorldChunkManagerAstral extends WorldChunkManager
+{
+	    private GenLayer myGenBiomes;
+    	private GenLayer myBiomeIndexLayer;
+    	private BiomeCache myBiomeCache;
+    	private List <biomegenbase>myBiomesToSpawnIn;
+
+}

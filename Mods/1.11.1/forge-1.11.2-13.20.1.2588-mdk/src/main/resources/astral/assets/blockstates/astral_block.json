@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"variant=astral": {
+			"model": "astral:astral_block"
+			              },
+		"variant=astral2": {
+			"model": "astral:astral_block_m1"
+						   }
+				}
+}

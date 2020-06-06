@@ -1,0 +1,23 @@
+package fr.helios.plugios.util;
+
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
+
+public class TntBreakEvent extends Event
+{
+    private static final HandlerList handlers = new HandlerList();
+    
+    public Class() {
+        
+    }
+    
+    public HandlerList getHandlerList()
+    {
+        
+    }
+    
+    public static HandlerList getHandlerList()
+    {
+        
+    }
+}

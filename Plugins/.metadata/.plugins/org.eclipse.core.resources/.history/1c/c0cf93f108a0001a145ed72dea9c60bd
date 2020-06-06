@@ -1,0 +1,14 @@
+package fr.elliot.sratch;
+
+public class Pourcentage
+{
+    public static float pouc;
+    
+    public static float CalculDuPoucentage(int valeurPartielle, int valeurTotal)
+    {
+        float pourcentage = 100 * valeurPartielle/valeurTotal;
+        pouc = pourcentage;
+        
+        return pourcentage;
+    }
+}

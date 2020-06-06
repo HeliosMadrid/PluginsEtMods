@@ -1,0 +1,9 @@
+package fr.elliot.sratch;
+
+public class Pourcentage
+{
+    public static float CalculDuPoucentage(int faces1, int faces2, int result1, int result2)
+    {
+        return 0;
+    }
+}

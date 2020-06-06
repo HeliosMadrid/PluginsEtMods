@@ -1,0 +1,13 @@
+package fr.helios.astral.utils.event;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+
+public class EnchantementAstralManager
+{
+    @SubscribeEvent
+    public void onHurt(LivingHurtEvent event)
+    {
+        
+    }
+}

@@ -1,0 +1,108 @@
+package fr.helios.astralplugin;
+
+import java.util.Arrays;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+public class AstralPluginListener implements Listener
+{
+    @EventHandler
+    public void onJoin(PlayerJoinEvent event)
+    {
+        Player player = event.getPlayer();
+        
+        ItemStack customSword = new ItemStack(Material.DIAMOND_SWORD, 1);
+        ItemStack bed = new ItemStack(Material.BED, 1);
+        ItemStack compass = new ItemStack(Material.COMPASS, 1);
+        ItemStack diamondHoe = new ItemStack(Material.DIAMOND_HOE, 1);
+        ItemStack customWool = new ItemStack(Material.WOOL, 32, (byte)14);
+        
+        ItemMeta customM = customSword.getItemMeta();
+        ItemMeta customC = compass.getItemMeta();
+        ItemMeta customB = bed.getItemMeta();
+        
+        player.getInventory().clear();     
+        
+        customM.setDisplayName("§1Ma super épée");
+        customM.setLore(Arrays.asList("appartient à :" + player.getName(), "enchantements :" + customSword.getEnchantments(), "sert à : tuer", "Exp:" + player.getExp()));
+        customM.addEnchant(Enchantment.DAMAGE_ALL, 200, true);
+        //customM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        
+        customC.setDisplayName("§8Speed");
+        customC.setUnbreakable(true);
+        customC.addEnchant(Enchantment.FIRE_ASPECT, Integer.MAX_VALUE, true);
+        customC.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        
+        customB.setDisplayName("§7Gui");
+        customB.setUnbreakable(true);
+        
+        customSword.setItemMeta(customM);
+        compass.setItemMeta(customC);
+        bed.setItemMeta(customB);
+        
+        player.getInventory().setItemInMainHand(customSword);
+        player.getInventory().setItem(8, bed);
+        player.getInventory().setItemInOffHand(diamondHoe);
+        player.getInventory().addItem(compass);
+        player.getInventory().setHelmet(customWool);
+        player.updateInventory();
+    }
+    
+    @EventHandler
+    public void onInteract(PlayerInteractEvent event)
+    {
+        Player player = event.getPlayer();
+        Action action = event.getAction();
+        ItemStack it = event.getItem();
+        
+        if(it == null) return ;
+        
+        if(it.getType() == Material.DIAMOND_HOE)
+        {
+            if(action == Action.RIGHT_CLICK_AIR)
+            player.sendMessage("vous venez de faire un click");
+        }
+        
+        if(it.getType() == Material.BED && it.hasItemMeta() && it.getItemMeta().getDisplayName().equalsIgnoreCase("§7Gui"))
+        {
+            Inventory inv = Bukkit.createInventory(null, 54, "§8Mon Menu");
+            
+            player.openInventory(inv);
+        }
+        
+        if(it.getType() == Material.COMPASS && it.hasItemMeta() && it.getItemMeta().getDisplayName().equalsIgnoreCase("§8Speed"))
+        {
+            if(!player.getPotionEffect(PotionEffectType.SPEED) && !player.getPotionEffect(PotionEffectType.JUMP))
+            {
+                player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 5));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 5));
+            }
+            
+            else if(petf == true)
+            {
+                player.removePotionEffect(PotionEffectType.SPEED);
+                player.removePotionEffect(PotionEffectType.JUMP);
+                petf = false;
+            }
+            
+            if(player.isSneaking())
+            {
+                player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 20 * 3, 5));
+            } 
+        }
+    }
+}

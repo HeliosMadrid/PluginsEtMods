@@ -1,0 +1,21 @@
+package fr.helios.astral.utils;
+
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnumEnchantmentType;
+
+public class EnchantementAstral extends Enchantment
+{
+    EnchantmentHelper.getEnchantmentLevel(id, itemstack);
+
+    public EnchantementAstral()
+    {
+        super(120, 0, EnumEnchantmentType.weapon);
+    }
+    
+    public int getMaxLevel()
+    {
+        return 3;
+    }
+    
+}

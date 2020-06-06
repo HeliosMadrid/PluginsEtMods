@@ -1,0 +1,29 @@
+package fr.helios.astral.blocks;
+
+import java.util.Random;
+
+import fr.helios.astral.ModAstral;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+
+public class BlockOreAstral extends Block
+{
+
+    protected BlockOreAstral(Material material)
+    {
+        super(material);
+        this.setCreativeTab(ModAstral.astralCreativeTab);
+    }
+    
+    public int quantityDropped(Random rand)
+    {
+        return 0 + rand.nextInt(1);
+    }
+  
+    public Item getItemDropped(int metadata, Random rand, int fortune)
+    {
+        return super.getItemDropped(metadata, rand, fortune);
+    }
+
+}

@@ -1,0 +1,28 @@
+package fr.helios.astral.utils;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import fr.helios.astral.ModAstral;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class AstralCreativeTab extends CreativeTabs
+{
+
+    public AstralCreativeTab(String label)
+    {
+        super(label);
+    }
+
+    @Override
+    public Item getTabIconItem()
+    {
+        return Item.getItemFromBlock(ModAstral.coffre_astral);
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public int func_151243_f()
+    {
+        retrun 0;
+    }
+}

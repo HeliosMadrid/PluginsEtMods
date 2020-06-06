@@ -1,0 +1,70 @@
+package fr.helios.uhcrunios.commands;
+
+import java.util.UUID;
+
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
+
+import fr.helios.uhcrunios.UHCRunIos;
+
+public class StartCommand implements CommandExecutor
+{
+    static int task;
+    private static int timer = 30;
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+    {
+        if(!UHCRunIos.getInstance().playersInGame.contains(((Entity)sender).getUniqueId()))
+        {
+            UHCRunIos.getInstance().playersInGame.add(((Entity)sender).getUniqueId());
+        }
+        
+        if(UHCRunIos.getInstance().playersInGame.size() >= 1)
+        {
+            task = Bukkit.getScheduler().scheduleSyncRepeatingTask(UHCRunIos.getInstance(), new Runnable()
+            {      
+                @Override
+                public void run()
+                {
+                    if(timer == 30 || timer == 15 || timer == 10 || timer == 5 || timer == 4 || timer == 3 || timer == 2 || timer == 1)
+                    {
+                        for(UUID uuid : UHCRunIos.getInstance().playersInGame)
+                        {
+                            Player player = Bukkit.getPlayer(uuid);
+                            
+                            player.sendMessage("Il ne reste plus que §2" + timer + "s avant le début du §4JEU");
+                        }
+                    }
+                    
+                    else if(timer == 0)
+                    {
+                        Bukkit.getScheduler().cancelTask(task);
+                        Player player = (Player)sender;
+                        player.sendMessage("Le §4JEU §acommence §o ! ! !");
+                    }
+                    
+                    timer--;
+                }
+                
+            }, 20, 20);
+        }
+        
+        return false;
+    }
+    
+    public void setLevel(int timer)
+    {
+        for(UUID uuid : UHCRunIos.getInstance().playersInGame)
+        {
+            Player player = Bukkit.getPlayer(uuid);
+            
+            player.sendMessage("Il ne reste plus que §2" + timer + "s avant le début du §4JEU");
+        }
+    }
+
+}

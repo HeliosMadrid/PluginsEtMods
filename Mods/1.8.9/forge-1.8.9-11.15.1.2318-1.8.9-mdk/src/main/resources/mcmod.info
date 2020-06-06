@@ -1,0 +1,16 @@
+[
+{
+  "modid": "divin",
+  "name": "Mod Divin",
+  "description": "Mod pour les dieux",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Helios_38"],
+  "credits": "Personne je l'ai fait seul",
+  "logoFile": "logodieux.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

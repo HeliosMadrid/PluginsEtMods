@@ -1,0 +1,14 @@
+package fr.elliot.sratch;
+
+public class Pourcentage
+{
+    public int nombreDeCombinaisonBonnes;
+    public int nombreDeCombinaisonTotal;
+    
+    public float CalculDuPoucentage(int faces1, int faces2, int result1, int result2)
+    {
+        this.nombreDeCombinaisonTotal = faces1 * faces2;
+        
+        return 0;
+    }
+}

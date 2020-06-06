@@ -1,0 +1,23 @@
+package fr.helios.plugios;
+
+import org.bukkit.Material;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractEvent;
+
+public class MenuIos implements Listener
+{
+
+    public MenuIos(PlugIios plugIios) {}
+
+    
+    @EventHandler
+    public void onClickBoussole(PlayerInteractEvent event)
+    {
+        if(event.getItem().getType() == Material.COMPASS)
+        {
+            
+        }
+    }
+
+}

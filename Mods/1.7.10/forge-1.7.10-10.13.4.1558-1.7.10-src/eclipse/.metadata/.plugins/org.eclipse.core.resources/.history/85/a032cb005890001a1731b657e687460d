@@ -1,0 +1,19 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.gen.layer.GenLayer;
+import net.minecraft.world.gen.layer.GenLayerVoronoiZoom;
+import net.minecraft.world.gen.layer.GenLayerZoom;
+
+public abstract class GenLayerAstral extends GenLayer
+{
+    public GenLayerAstral(long par1)
+    {
+        super(par1);
+    }
+    
+    public static GenLayer[] makeTheWorld(long 1)
+    {
+        
+    }
+
+}

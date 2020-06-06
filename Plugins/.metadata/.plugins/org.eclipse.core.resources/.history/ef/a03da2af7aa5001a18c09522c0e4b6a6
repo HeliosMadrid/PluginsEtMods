@@ -1,0 +1,13 @@
+package fr.helios.vault;
+
+import fr.helios.vault.listener.VaultListener;
+
+public class Vault extends JavaPlugin implements Listener
+{
+    @Override
+    public void onEnable()
+    {
+        super.onEnable();
+        Bukkit.getPluginManager().registerEvents(new VaultListener(), this);
+    }
+}

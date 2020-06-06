@@ -1,0 +1,69 @@
+package fr.helios.vault.listener;
+
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.RegisteredServiceProvider;
+
+import com.google.common.eventbus.Subscribe;
+
+import net.milkbowl.vault.economy.Economy;
+
+public class VaultListener implements Listener
+{
+    public static Economy economy = null;
+    
+    private boolean setupEconomy() 
+    { 
+        RegisteredServiceProvider<Economy> economyProvider  =  Bukkit.getServer().getServicesManager ().getRegistration(net.milkbowl.vault.economy.Economy.class); 
+        if (economyProvider  !=  null)
+        { 
+            economy = economyProvider.getProvider(); 
+        }
+
+        return  (economy  !=  null); 
+    }
+    @EventHandler
+    public void onJoin(PlayerJoinEvent event)
+    {
+        if(setupEconomy())
+        {
+            Player player = event.getPlayer();
+            double balance = economy.getBalance(player);
+            
+            if(balance == 0)
+            {
+                player.sendMessage("Vous n'avez pas d'argent sur votre compte la banque vous donnne 20$");
+                economy.depositPlayer(player, 20.0D);
+            }
+            else
+            {
+                player.sendMessage("Vous devez avoir le montant de 0 sur votre compte pour recevoire la pitié de la banque");
+            }
+        }
+    }
+    
+    @EventHandler
+    public void onDeath(PlayerDeathEvent event)
+    {
+        if(setupEconomy())
+        {
+            Player player = event.getEntity();
+            double balance = economy.getBalance(player);
+            
+            if(balance <= 0)
+            {
+                player.sendMessage("Vous ne pouvez plus perdre d'argent votre solde est nulle!");
+            }
+            else
+            {
+                player.sendMessage("Vous venez de perdre la somme de 15$");
+                economy.withdrawPlayer(player, 15.0D);
+            }
+        }
+    }
+
+}

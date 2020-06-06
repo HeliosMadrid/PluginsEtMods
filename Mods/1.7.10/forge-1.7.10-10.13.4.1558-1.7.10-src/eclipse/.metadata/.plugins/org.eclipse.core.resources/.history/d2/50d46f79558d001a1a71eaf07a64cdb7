@@ -1,0 +1,8 @@
+package fr.helios.astral.blocks;
+
+import net.minecraft.block.Block;
+
+public class BlockOreAstral extends Block
+{
+
+}

@@ -1,0 +1,8 @@
+package fr.helios.uhcrunios.event;
+
+import org.bukkit.event.Listener;
+
+public class UHCNoFall implements Listener
+{
+
+}

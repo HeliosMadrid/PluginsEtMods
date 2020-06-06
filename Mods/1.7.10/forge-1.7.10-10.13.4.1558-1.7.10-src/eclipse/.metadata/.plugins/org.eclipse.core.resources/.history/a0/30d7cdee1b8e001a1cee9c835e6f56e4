@@ -1,0 +1,9 @@
+package fr.helios.astral.utils.generation;
+
+public class WorldTypeAstral
+{
+    public static void BiomList()
+    {
+        
+    }
+}

@@ -1,0 +1,7 @@
+name: Duel
+version: 1.0
+main: fr.helios.duel.Main
+commands:
+  duel:
+    description:lance une demande de duel
+    

@@ -1,0 +1,24 @@
+package fr.helios.astral.blocks;
+
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+
+public class TileEntityAstral extends TileEntity
+{
+    private int number;
+    
+    @Override
+    public void readFromNBT(NBTTagCompound compound)
+    {
+        super.readFromNBT(compound);
+        this.number = compound.getInteger("Number");
+    }
+
+    @Override
+    public void writeToNBT(NBTTagCompound compound)
+    {
+        super.writeToNBT(compound);
+        compound.setInteger("Number", this.number);
+    }
+    
+}

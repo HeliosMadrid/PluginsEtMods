@@ -1,0 +1,8 @@
+package fr.helios.astral.items;
+
+import net.minecraft.item.Item;
+
+public class ItemGemmes extends Item
+{
+
+}

@@ -1,0 +1,13 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.biome.BiomeGenBase;
+
+public class BiomeListAstral
+{
+    public static WorldTypeAstral worldTypeAstral;
+    
+    public static void BiomeList()
+    {
+        public static BiomeGenBase astralStonePlains, astralMegaMoutain
+    }
+}

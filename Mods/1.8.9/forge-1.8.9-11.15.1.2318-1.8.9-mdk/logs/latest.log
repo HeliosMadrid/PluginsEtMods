@@ -1,0 +1,74 @@
+[11:27:24] [main/INFO]: Logging in with username & password
+[11:27:31] [Server thread/INFO]: Starting minecraft server version 1.8.9
+[11:27:34] [Server thread/INFO]: Loading properties
+[11:27:34] [Server thread/INFO]: Default game type: SURVIVAL
+[11:27:34] [Server thread/INFO]: Generating keypair
+[11:27:34] [Server thread/INFO]: Starting Minecraft server on *:25565
+[11:27:34] [Server thread/INFO]: Using default channel type
+[11:27:35] [Server thread/WARN]: Failed to load user banlist: 
+java.io.FileNotFoundException: banned-players.json (Le fichier spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_241]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_241]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_241]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[guava-17.0.jar:?]
+	at net.minecraft.server.management.UserList.readSavedFile(UserList.java:198) ~[UserList.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.loadUserBansList(DedicatedPlayerList.java:122) [DedicatedPlayerList.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.<init>(DedicatedPlayerList.java:29) [DedicatedPlayerList.class:?]
+	at net.minecraft.server.dedicated.DedicatedServer.startServer(DedicatedServer.java:209) [DedicatedServer.class:?]
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:508) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_241]
+[11:27:35] [Server thread/WARN]: Failed to load ip banlist: 
+java.io.FileNotFoundException: banned-ips.json (Le fichier spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_241]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_241]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_241]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[guava-17.0.jar:?]
+	at net.minecraft.server.management.UserList.readSavedFile(UserList.java:198) ~[UserList.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.loadIpBanList(DedicatedPlayerList.java:110) [DedicatedPlayerList.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.<init>(DedicatedPlayerList.java:31) [DedicatedPlayerList.class:?]
+	at net.minecraft.server.dedicated.DedicatedServer.startServer(DedicatedServer.java:209) [DedicatedServer.class:?]
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:508) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_241]
+[11:27:35] [Server thread/WARN]: Failed to load operators list: 
+java.io.FileNotFoundException: ops.json (Le fichier spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_241]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_241]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_241]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[guava-17.0.jar:?]
+	at net.minecraft.server.management.UserList.readSavedFile(UserList.java:198) ~[UserList.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.loadOpsList(DedicatedPlayerList.java:134) [DedicatedPlayerList.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.<init>(DedicatedPlayerList.java:33) [DedicatedPlayerList.class:?]
+	at net.minecraft.server.dedicated.DedicatedServer.startServer(DedicatedServer.java:209) [DedicatedServer.class:?]
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:508) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_241]
+[11:27:35] [Server thread/WARN]: Failed to load white-list: 
+java.io.FileNotFoundException: whitelist.json (Le fichier spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_241]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_241]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_241]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[guava-17.0.jar:?]
+	at net.minecraft.server.management.UserList.readSavedFile(UserList.java:198) ~[UserList.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.readWhiteList(DedicatedPlayerList.java:158) [DedicatedPlayerList.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.<init>(DedicatedPlayerList.java:34) [DedicatedPlayerList.class:?]
+	at net.minecraft.server.dedicated.DedicatedServer.startServer(DedicatedServer.java:209) [DedicatedServer.class:?]
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:508) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_241]
+[11:27:35] [Server thread/INFO]: Preparing level "world"
+[11:27:35] [Server thread/WARN]: Unable to find spawn biome
+[11:27:36] [Server thread/INFO]: Preparing start region for level 0
+[11:27:37] [Server thread/INFO]: Preparing spawn area: 9%
+[11:27:38] [Server thread/INFO]: Preparing spawn area: 15%
+[11:27:39] [Server thread/INFO]: Preparing spawn area: 27%
+[11:27:40] [Server thread/INFO]: Preparing spawn area: 40%
+[11:27:41] [Server thread/INFO]: Preparing spawn area: 54%
+[11:27:42] [Server thread/INFO]: Preparing spawn area: 68%
+[11:27:43] [Server thread/INFO]: Preparing spawn area: 82%
+[11:27:44] [Server thread/INFO]: Preparing spawn area: 95%
+[11:27:45] [Server thread/INFO]: Done (9,698s)! For help, type "help" or "?"
+[11:27:55] [Server thread/INFO]: Stopping the server
+[11:27:55] [Server thread/INFO]: Stopping server
+[11:27:55] [Server thread/INFO]: Saving players
+[11:27:55] [Server thread/INFO]: Saving worlds
+[11:27:55] [Server thread/INFO]: Saving chunks for level 'world'/Overworld
+[11:27:56] [Server thread/INFO]: Saving chunks for level 'world'/Nether
+[11:27:56] [Server thread/INFO]: Saving chunks for level 'world'/The End

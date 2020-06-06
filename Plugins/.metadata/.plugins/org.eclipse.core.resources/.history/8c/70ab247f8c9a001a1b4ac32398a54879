@@ -1,0 +1,43 @@
+package fr.helios.duel;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Main extends JavaPlugin
+{
+    @Override
+    public void onEnable()
+    {
+        super.onEnable();
+        System.out.println("DuelPlugin");
+        getCommand("duel").setExecutor(this);
+    }   
+    
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
+    {
+        if(sender instanceof Player && label.equalsIgnoreCase("duel"))
+        {
+             Player player = (Player)sender;
+             
+             // -> /duel
+             if(args.length == 0)
+             {
+                 player.sendMessage("§e/§rduel <§1player§r>");
+                 player.sendMessage("§e/§rduel <§aaccept§r/§4deny§r>");
+                 return true;
+             }
+             
+             // -> /duel <player>
+             else if(args.length == 1)
+             {
+                 String targetName =args[0];
+                 player.sendMessage(targetName);
+             }
+        }  
+                
+        return false;
+    }
+}

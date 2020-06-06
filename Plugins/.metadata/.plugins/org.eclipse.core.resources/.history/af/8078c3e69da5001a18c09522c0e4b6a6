@@ -1,0 +1,86 @@
+package fr.helios.plugios;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import fr.helios.plugios.commands.FactionAPICommands;
+import fr.helios.plugios.listener.FactionListener;
+import fr.helios.plugios.listener.PlugiosListener;
+import fr.helios.plugios.util.EffectBlood;
+import fr.helios.plugios.util.PanneauIos;
+import fr.helios.plugios.util.SkullIos;
+import fr.helios.plugios.util.SpawnerIos;
+import fr.helios.plugios.util.scoreboard;
+
+public class PlugIios extends JavaPlugin implements Listener
+{
+    public static PlugIios instance;
+    
+    public static PlugIios getInstance()
+    {
+        return instance;
+    }
+
+    @Override
+    public void onEnable()
+    {
+        super.onEnable();
+        instance = this;
+        PluginManager pm = getServer().getPluginManager();
+        getCommand("faction").setExecutor(new FactionAPICommands());
+        pm.registerEvents(new FactionListener(), this);
+        pm.registerEvents(new PlugiosListener(), this);
+        pm.registerEvents(new EffectBlood(), this);
+        pm.registerEvents(new MenuIos(), this);
+        pm.registerEvents(new SkullIos(), this);
+        pm.registerEvents(new SpawnerIos(), this);
+        pm.registerEvents(new PanneauIos(), this);
+        pm.registerEvents(new scoreboard(), this);
+        pm.registerEvents(new Artifice(), this);
+        
+        @SuppressWarnings({"deprecation"})
+        ShapedRecipe recipe1 = new ShapedRecipe(new ItemStack(Material.BEACON, 9));
+        recipe1.shape(new String[] {"###", "#D#", "###"});
+        recipe1.setIngredient('D', Material.DIAMOND_CHESTPLATE);
+        recipe1.setIngredient('#', Material.WHEAT);
+        getServer().addRecipe(recipe1);
+    }
+    
+    @Override
+    public void onDisable()
+    {
+        super.onDisable();
+    }
+    
+    public int task;
+    public void startCountdown(final int i)
+    {
+        task = Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                int time  = i;
+                
+                if(time != 0)
+                {
+                    Bukkit.broadcastMessage("La partie commance dans §d" + time + "s");
+                    time--;
+                    startCountdown(time);
+                }
+                
+                else if(time == 0)
+                {
+                    Bukkit.broadcastMessage("§4L§ce §6j§ee§2u§a §b§3C§1O§9M§dM§5E§fN§7C§8E §l! §o! §n! §ktest");
+                    Bukkit.getScheduler().cancelTask(task);
+                }
+            }
+            
+        }, 20);
+    }
+}

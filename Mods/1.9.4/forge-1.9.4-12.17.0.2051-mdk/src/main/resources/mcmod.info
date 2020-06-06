@@ -1,0 +1,16 @@
+[
+{
+  "modid": "astral",
+  "name": "Astral Mod",
+  "description": "test",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Helios_38"],
+  "credits": "Rien",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "astral",
+  "name": "Astral Mod",
+  "description": "Mod de test magique",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Helios_38"],
+  "credits": "Je l'ai fait seul.",
+  "logoFile": "logoAstral.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

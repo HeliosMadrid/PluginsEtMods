@@ -1,0 +1,45 @@
+[14:03:44] [main/INFO]: Logging in with username & password
+[14:03:48] [main/INFO]: Setting user: Helios_38
+[14:03:49] [Client thread/INFO]: LWJGL Version: 2.9.1
+[14:03:56] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Astral Mod
+[14:03:57] [Sound Library Loader/INFO]: Sound engine started
+[14:04:02] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[14:04:02] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[14:04:02] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Astral Mod
+[14:04:03] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[14:04:03] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[14:04:04] [Sound Library Loader/INFO]: Sound engine started
+[14:04:06] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[14:04:06] [Server thread/INFO]: Generating keypair
+[14:04:06] [Server thread/INFO]: Preparing start region for level 0
+[14:04:07] [Server thread/INFO]: Changing view distance to 12, from 10
+[14:04:08] [Server thread/INFO]: Helios_38[local:E:61eb3068] logged in with entity id 264 at (212.6255377337459, 75.65658248110962, -79.13209503384913)
+[14:04:08] [Server thread/INFO]: Helios_38 a rejoint la partie
+[14:04:08] [Client thread/INFO]: [CHAT] salut :Helios_38
+[14:04:10] [Server thread/INFO]: Helios_38 vient d'obtenir le succès [Faire l'inventaire]
+[14:04:10] [Client thread/INFO]: [CHAT] Helios_38 vient d'obtenir le succès [Faire l'inventaire]
+[14:04:56] [Client thread/INFO]: [CHAT] /gamemode, /gamerule
+[14:04:58] [Server thread/INFO]: [Helios_38 : Changement de votre propre mode de jeu en Mode Survie]
+[14:04:58] [Client thread/INFO]: [CHAT] Votre mode de jeu a été mis à jour
+[14:05:15] [Server thread/INFO]: [Helios_38 : Don de 7478 point(s) d’expérience à Helios_38]
+[14:05:15] [Client thread/INFO]: [CHAT] Don de 7478 point(s) d’expérience à Helios_38
+[14:05:34] [Server thread/INFO]: [Helios_38 : Changement de votre propre mode de jeu en Mode Créatif]
+[14:05:34] [Client thread/INFO]: [CHAT] Votre mode de jeu a été mis à jour
+[14:05:57] [Server thread/INFO]: [Helios_38 : Changement de votre propre mode de jeu en Mode Survie]
+[14:05:58] [Client thread/INFO]: [CHAT] Votre mode de jeu a été mis à jour
+[14:05:58] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:step.anvil
+[14:06:09] [Server thread/INFO]: [Helios_38 : Heure fixée à 13000]
+[14:06:09] [Client thread/INFO]: [CHAT] Heure fixée à 13000
+[14:07:10] [Client thread/INFO]: [CHAT] Cette commande n'est pas reconnue ; faites /help pour obtenir la liste des commandes
+[14:07:18] [Client thread/INFO]: [CHAT] Cette commande n'est pas reconnue ; faites /help pour obtenir la liste des commandes
+[14:07:46] [Server thread/INFO]: Saving and pausing game...
+[14:07:46] [Server thread/INFO]: Saving chunks for level 'Astral test'/Overworld
+[14:07:46] [Server thread/INFO]: Saving chunks for level 'Astral test'/Nether
+[14:07:46] [Server thread/INFO]: Saving chunks for level 'Astral test'/The End
+[14:07:46] [Server thread/INFO]: Stopping server
+[14:07:46] [Server thread/INFO]: Saving players
+[14:07:46] [Server thread/INFO]: Saving worlds
+[14:07:46] [Server thread/INFO]: Saving chunks for level 'Astral test'/Overworld
+[14:07:46] [Server thread/INFO]: Saving chunks for level 'Astral test'/Nether
+[14:07:46] [Server thread/INFO]: Saving chunks for level 'Astral test'/The End
+[14:07:48] [Client thread/INFO]: Stopping!

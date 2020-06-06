@@ -1,0 +1,16 @@
+package fr.helios.astral.utils.generation;
+
+import net.minecraft.world.gen.layer.GenLayer;
+
+public class GenLayerAstral extends GenLayer
+{
+    public GenLayerAstral(long seed)
+    {
+        super(seed);
+    }
+    
+    public static GenLayer[] makeTheWorld(long seed)
+    {
+        
+    }
+}

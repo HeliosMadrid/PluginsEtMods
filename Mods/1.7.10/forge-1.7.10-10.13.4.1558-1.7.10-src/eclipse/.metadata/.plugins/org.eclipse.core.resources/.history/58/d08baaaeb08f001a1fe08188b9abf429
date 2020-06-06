@@ -1,0 +1,9 @@
+package fr.helios.astral.utils.event;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
+public class PlayerEventHandler
+{
+    @SubscribeEvent
+    public void onPlayerLogged()
+}

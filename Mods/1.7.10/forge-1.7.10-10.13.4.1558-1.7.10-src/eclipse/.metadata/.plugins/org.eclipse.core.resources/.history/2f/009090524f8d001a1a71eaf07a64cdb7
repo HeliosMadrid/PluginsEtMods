@@ -1,0 +1,42 @@
+package fr.helios.astral.utils;
+
+import java.util.List;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import fr.helios.astral.ModAstral;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class AstralCreativeTab extends CreativeTabs
+{
+
+    public AstralCreativeTab(String label)
+    {
+        super(label);
+        this.setBackgroundImageName("tab_astral_creative_tab.png");
+    }
+
+    @Override
+    public Item getTabIconItem()
+    {
+        return Item.getItemFromBlock(ModAstral.coffre_astral);
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public int func_151243_f()
+    {
+        return 0;
+    }
+    
+    @Override
+    public void displayAllReleventItems(List list)
+    {
+        
+    }
+    
+    private voidaddItem(Item item)
+    {
+        item.getSubItems(item150895_3_);
+    }
+}

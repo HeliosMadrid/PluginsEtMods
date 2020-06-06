@@ -1,0 +1,6 @@
+package fr.helios.astral.utils.generation;
+
+public class WorldGenShrine extends WorldGeneration
+{
+
+}

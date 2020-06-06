@@ -1,0 +1,59 @@
+package fr.helios.astral.utils;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+import net.minecraftforge.common.IExtendedEntityProperties;
+
+public class ExtendedEntityPropAstral implements IExtendedEntityProperties
+{
+    
+    public static final String EXT_PROP_NAME = "ExtPropAstral";
+    
+    private final EntityPlayer player;
+    
+    public long money;
+    public long maxMoney;
+    
+    public ExtendedEntityPropAstral(EntityPlayer player)
+    {
+        this.player = player;
+        this.money = 0;
+        this.maxMoney = 4000000000L;
+    }
+    
+    public static final void register(EntityPlayer player)
+    {
+        player.registerExtendedProperties(ExtendedEntityPropAstral.EXT_PROP_NAME, new ExtendedEntityPropAstral(player));
+    }
+    
+    public static final  ExtendedEntityPropAstral get(EntityPlayer player)
+    {
+        return (ExtendedEntityPropAstral) player.getExtendedProperties(EXT_PROP_NAME);
+    }
+
+    @Override
+    public void saveNBTData(NBTTagCompound compound)
+    {
+        NBTTagCompound properties = new NBTTagCompound();
+        
+        properties.setLong("Money", this.money);
+        properties.setLong("MaxMoney", this.maxMoney);
+        
+        compound.setTag(EXT_PROP_NAME, properties);
+    }
+
+    @Override
+    public void loadNBTData(NBTTagCompound compound)
+    {
+        NBTTagCompound properties = (NBTTagCompound) compound.getTag(EXT_PROP_NAME);
+    }
+
+    @Override
+    public void init(Entity entity, World world)
+    {
+        
+    }
+
+}
