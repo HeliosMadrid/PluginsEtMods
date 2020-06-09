@@ -13,15 +13,16 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
-@EventBusSubscriber(modid = References.MODID)
+@EventBusSubscriber(modid = References.MODID, value = Side.CLIENT)
 public class AstralItems
 {
     public static final AstralItems INSTANCE = new AstralItems();
     
     public static final Item ecrin_centaure = new EcrinCentaure("ecrin_centaure");
     
-    public List<Item> items = Lists.newArrayList();
+    private List<Item> items = Lists.newArrayList();
     
     @SubscribeEvent
     public void registerModels(ModelRegistryEvent event)

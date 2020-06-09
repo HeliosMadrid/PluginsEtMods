@@ -14,7 +14,7 @@ public class EcrinCentaure extends Item
         setCreativeTab(CreativeTabs.REDSTONE);
         setMaxStackSize(32);
         
-        AstralItems.INSTANCE.items.add(this);
+        AstralItems.INSTANCE.getItems().add(this);
     }
     
 }
