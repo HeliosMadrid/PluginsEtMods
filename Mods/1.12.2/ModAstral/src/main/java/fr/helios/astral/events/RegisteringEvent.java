@@ -10,6 +10,6 @@ public class RegisteringEvent
     @SubscribeEvent
     public void registerItems(RegistryEvent.Register<Item> event)
     {
-        event.getRegistry().registerAll(AstralItems.INSTANCE.getItems().toArray(new Item[0]));
+        event.getRegistry().registerAll(AstralItems.INSTANCE.items.toArray(new Item[0]));
     }
 }

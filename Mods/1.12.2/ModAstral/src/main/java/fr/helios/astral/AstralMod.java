@@ -2,8 +2,10 @@ package fr.helios.astral;
 
 import org.apache.logging.log4j.Logger;
 
+import fr.helios.astral.events.RegisteringEvent;
 import fr.helios.astral.proxy.CommonProxy;
 import fr.helios.astral.utils.References;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -20,6 +22,11 @@ public class AstralMod
     
     @SidedProxy(modId = References.MODID, clientSide = References.CLIENT_PROXY, serverSide = References.SERVER_PROXY)
     public static CommonProxy proxy;
+    
+    public AstralMod()
+    {
+        MinecraftForge.EVENT_BUS.register(new RegisteringEvent());
+    }
     
     public static Logger logger;
     
