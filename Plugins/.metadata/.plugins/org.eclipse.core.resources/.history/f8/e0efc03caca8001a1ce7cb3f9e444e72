@@ -1,0 +1,8 @@
+package fr.helios.uhcrunios.game;
+
+import org.bukkit.event.Listener;
+
+public class UHCPvP implements Listener
+{
+
+}

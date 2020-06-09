@@ -1,0 +1,36 @@
+package fr.helios.uhcrunios;
+
+import java.util.ArrayList;
+import java.util.UUID;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+import fr.helios.uhcrunios.commands.ResetCommand;
+import fr.helios.uhcrunios.commands.StartCommand;
+import fr.helios.uhcrunios.commands.TestExecutor;
+import fr.helios.uhcrunios.event.EventsManager;
+import fr.helios.uhcrunios.event.UHCSpeedRecipes;
+import fr.helios.uhcrunios.game.UHCState;
+
+public class UHCRunIos extends JavaPlugin
+{
+    public static UHCRunIos instance;
+    public ArrayList<UUID> playersInGame = new ArrayList<>();
+    
+    public static UHCRunIos getInstance()
+    {
+        return instance;
+    }
+
+    @Override
+    public void onEnable()
+    {
+        instance = this;
+        EventsManager.registerEvents(this);
+        getCommand("startIos").setExecutor(new StartCommand());
+        getCommand("resetIos").setExecutor(new ResetCommand());
+        getCommand("testIos").setExecutor(new TestExecutor());
+        UHCSpeedRecipes.players.clear();
+        UHCState.setState(UHCState.WAIT);
+    }
+}

@@ -1,0 +1,204 @@
+package fr.helios.uhcrunios.commands;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class TntCommand implements CommandExecutor
+{
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+    {
+        if(args.length <= 3)
+        {
+            if(sender instanceof Player)
+            {
+                Player player = (Player)sender;
+                player.sendMessage("La §asyntaxe §rest §e/§4tntIos §c<§4retardement§c> <§acmd§c> <§5timer§5> §c<§4Power§c> §c<x, y, z§c> §6/ §c<§1Joueur§c> §6/ §8(Par défault vos coordonées)");
+            }
+            
+            else
+            {
+                System.out.println("Vous pouvez utiliser cette commande mais la syntaxe pour la console est /tntIos <retardement> <cmd> <timer> <power> (<x> <y> <z> / <Joueur>  <worldName>");
+            }
+            
+            return false;
+        }
+        
+        //timer
+        if(args[0] == "true")
+        {
+            //timer + cmd
+            if(args[1] == "true")
+            {
+                
+            }
+            
+            //timer 
+            else if(args[1] == "false")
+            {
+                //sender = Player
+                if(sender instanceof Player)
+                {
+                    Player player = (Player)sender;
+                    int timerLonger = Integer.valueOf(args[2]);
+                    boolean power = Boolean.valueOf(args[3]);
+                    
+                    //bombe avec x y z timer power
+                    if(args.length == 7)
+                    {
+                        int x = Integer.valueOf(args[4]);
+                        int y = Integer.valueOf(args[5]);
+                        int z = Integer.valueOf(args[6]);
+                        
+                        if(!power)
+                        {
+                            Player7False(x, y, z, player, timerLonger);
+                        }
+                        
+                        else
+                        {
+                            Player7True(x, y, z, player, timerLonger);
+                        }
+                    }
+                    
+                    //bombe avec timer power (Player = sender = Location)
+                    else if(args.length == 4)
+                    {
+                        if(!power)
+                        {
+                            Player4False(player, timerLonger);
+                        }
+                        
+                        else
+                        {
+                            Player4True(player, timerLonger);
+                        }
+                    }
+                    
+                    //bombe avec PlayerTarget timer power (Location = PlayerTarget)
+                    else if(args.length == 5)
+                    {
+                        Player playerTarget = Bukkit.getServer().getPlayer(args[4]);
+                        
+                        if(!power)
+                        {
+                            Player5False(playerTarget, timerLonger);
+                        }
+                        
+                        else
+                        {
+                            Player5True(playerTarget, timerLonger);
+                        }
+                    }
+                    
+                    else
+                    {
+                        player.sendMessage("La §asyntaxe §rest §e/§4tntIos §c<§4retardement§c> <§acmd§c> <§5timer§5> §c<§4Power§c> §c<x, y, z§c> §6/ §c<§1Joueur§c> §6/ §8(Par défault vos coordonées)");
+                    }
+                }
+                
+                // sender = console
+                else if(args.length == 8)
+                {
+                    
+                }
+                
+                //syntaxe incorrecte
+                else
+                {
+                    System.out.println("Vous pouvez utiliser cette commande mais la syntaxe pour la console est /tntIos <retardement> <cmd> <timer> <power> (<x> <y> <z> / <Joueur>  <worldName>");
+                }
+            }
+        }
+        
+        //sans timer 
+        else if(args[0] == "false")
+        {
+            //cmd
+            if(args[1] == "true")
+            {
+                
+            }
+            
+            //instantané
+            else if(args[1] == "false")
+            {
+                
+            }
+        }
+        
+        return true;
+    }
+    
+    //bombe petite avec x y z False
+    private static void Player7False(int x, int y, int z, Player player, int timerLonger)
+    {
+        player.sendMessage("test");
+        if(!(player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.AIR || player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.LAVA || player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.WATER)) 
+        {
+            player.getWorld().getBlockAt(x, y, z).setType(Material.GOLD_PLATE);
+        }
+        
+        else
+        {
+            player.getWorld().getBlockAt(x, y - 1, z).setType(Material.STONE);
+            player.getWorld().getBlockAt(x, y, z).setType(Material.GOLD_PLATE);
+        }
+        
+        player.getWorld().getBlockAt(x + 1, y, z).setType(Material.TNT);
+        player.getWorld().getBlockAt(x - 1, y, z).setType(Material.TNT);
+        player.getWorld().getBlockAt(x, y, z + 1).setType(Material.TNT);
+        player.getWorld().getBlockAt(x, y, z - 1).setType(Material.TNT);
+        
+        for(int i = 1; i <= timerLonger; i++)
+        {
+            player.getWorld().getBlockAt(x, y + i, z).setType(Material.WEB);
+        }
+        
+        player.getWorld().getBlockAt(x, y + timerLonger + 2, z).setType(Material.SAND);
+    }
+    
+    //bombe grosse avec x y z True
+    private static void Player7True(int x, int y, int z, Player player, int timerLonger)
+    {
+        
+    }
+    
+    //bombe grosse avec x y z False
+    private static void Player4False(Player player, int timerLonger)
+    {
+        int x = player.getLocation().getBlockX() + 2;
+        int y = player.getLocation().getBlockY();
+        int z= player.getLocation().getBlockZ(); 
+    }
+    
+    //bombe grosse avec x y z True
+    private static void Player4True(Player player, int timerLonger)
+    {
+        int x = player.getLocation().getBlockX() + 2;
+        int y = player.getLocation().getBlockY();
+        int z= player.getLocation().getBlockZ(); 
+    }
+    
+    //bombe grosse avec x y z False
+    private static void Player5False(Player playerTarget, int timerLonger)
+    {
+        int x = playerTarget.getLocation().getBlockX() + 3;
+        int y = playerTarget.getLocation().getBlockY() + 3;
+        int z = playerTarget.getLocation().getBlockZ();
+    }
+    
+    //bombe grosse avec x y z True
+    private static void Player5True(Player playerTarget, int timerLonger)
+    {
+        int x = playerTarget.getLocation().getBlockX() + 3;
+        int y = playerTarget.getLocation().getBlockY() + 3;
+        int z = playerTarget.getLocation().getBlockZ();
+    }
+
+}

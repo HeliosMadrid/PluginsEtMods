@@ -1,0 +1,16 @@
+[
+{
+  "modid": "astral",
+  "name": "Astral Mod",
+  "description": "Mod qui utilise la magie des Astres",
+  "version": "${2.0}",
+  "mcversion": "${1.12}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Helios_38"],
+  "credits": "Jaera'Hells",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,17 @@
+package fr.helios.uhcrunios.game;
+
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+
+public class UHCPvP implements Listener
+{
+    @EventHandler
+    public void fakeDeath(EntityDamageByEntityEvent event)
+    {
+        if(event.getEntity() instanceof Player)
+        {
+            
+        }
+    }
+}

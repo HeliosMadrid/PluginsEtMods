@@ -1,0 +1,22 @@
+package fr.helios.uhcrunios.commands;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class TestExecutor implements CommandExecutor
+{
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+    {
+        Player player = (Player)sender;
+        
+        int x = (int)(player.getLocation().getX() + 2);
+        int y = (int)player.getLocation().getY();
+        int z = (int)(player.getLocation().getZ() - 2);
+        
+        return false;
+    }
+
+}

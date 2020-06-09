@@ -1,0 +1,163 @@
+ /*if(sender instanceof Player)
+        {
+            Player player = (Player)sender;
+            player.sendMessage("test");
+            
+            if(args.length == 5)
+            {
+                player.sendMessage("test1");
+                int x = Integer.valueOf(args[0]);
+                int y = Integer.valueOf(args[1]);
+                int z = Integer.valueOf(args[2]);
+                int timerLonger = Integer.valueOf(args[3]);
+                boolean power = Boolean.valueOf(args[4]);
+                
+                if(power == false)
+                {  
+                    player.sendMessage("test2");
+                    if(!(player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.AIR || player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.LAVA || player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.WATER)) 
+                    {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.GOLD_PLATE);
+                    }
+                    
+                    else
+                    {
+                        player.getWorld().getBlockAt(x, y - 1, z).setType(Material.STONE);
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.GOLD_PLATE);
+                    }
+                    
+                    player.getWorld().getBlockAt(x + 1, y, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z + 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z - 1).setType(Material.TNT);
+                    
+                    for(int i = 1; i <= timerLonger; i++)
+                    {
+                        player.getWorld().getBlockAt(x, y + i, z).setType(Material.WEB);
+                    }
+                    
+                    player.getWorld().getBlockAt(x, y + timerLonger + 2, z).setType(Material.SAND);
+                    
+                }
+                
+                else
+                {
+                    player.sendMessage("test3");
+                    //y 
+                    player.getWorld().getBlockAt(x, y, z).setType(Material.TNT);//MainTop
+                    player.getWorld().getBlockAt(x + 1, y, z).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x - 1, y , z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z + 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 1, y, z + 1).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x + 1, y, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y, z + 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 2, y, z).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x - 2, y, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 2, y, z).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x - 2, y, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 2, y, z + 1).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x + 2, y, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 2, y, z + 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 2, y, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 1, y, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 1, y, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 2, y, z + 2).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x + 2, y, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 2, y, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 2, y, z - 2).setType(Material.TNT);
+                    
+                    //y + 6
+                    player.getWorld().getBlockAt(x, y + 6, z).setType(Material.TNT);//MainTop
+                    player.getWorld().getBlockAt(x + 1, y + 6, z).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x - 1, y + 6, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y + 6, z + 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y + 6, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 1, y + 6, z + 1).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x + 1, y + 6, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y + 6, z + 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y + 6, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 2, y + 6, z).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x - 2, y + 6, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y + 6, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y + 6, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 2, y + 6, z).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x - 2, y + 6, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y + 6, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y + 6, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 2, y + 6, z + 1).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x + 2, y + 6, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 2, y + 6, z + 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 2, y + 6, z - 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 1, y + 6, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y + 6, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 1, y + 6, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y + 6, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x + 2, y + 6, z + 2).setType(Material.TNT);//
+                    player.getWorld().getBlockAt(x + 2, y + 6, z - 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 2, y + 6, z + 2).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 2, y + 6, z - 2).setType(Material.TNT);
+                }
+                
+            }
+            
+            else if(args.length == 2)
+            {
+                player.sendMessage("test4");
+                int x = (int)(player.getLocation().getX() + 2);
+                int y = (int)player.getLocation().getY();
+                int z = (int)(player.getLocation().getZ() - 2);
+                int timerLonger = Integer.valueOf(args[0]);
+                boolean power = Boolean.valueOf(args[1]);
+                
+                if(power == false)
+                {
+                    player.sendMessage("test5");
+                    if(!(player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.AIR || player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.LAVA || player.getWorld().getBlockAt(x, y - 1, z).getType() == Material.WATER)) 
+                    {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.GOLD_PLATE);
+                    }
+                    
+                    else
+                    {
+                        player.getWorld().getBlockAt(x, y - 1, z).setType(Material.STONE);
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.GOLD_PLATE);
+                    }
+                    
+                    player.getWorld().getBlockAt(x + 1, y, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x - 1, y, z).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z + 1).setType(Material.TNT);
+                    player.getWorld().getBlockAt(x, y, z - 1).setType(Material.TNT);
+                    
+                    for(int i = 1; i <= timerLonger; i++)
+                    {
+                        System.out.println("test 2: " + i);
+                        player.getWorld().getBlockAt(x, y + i, z).setType(Material.WEB);
+                    }
+                    
+                    player.getWorld().getBlockAt(x, y + timerLonger + 2, z).setType(Material.SAND);
+                    
+                }
+                
+                else
+                {
+                    
+                }
+            }
+            
+            else
+            {
+                player.sendMessage("La §asyntaxe §rest §e/§4tntIos §c<x, y, z§c> §6/ §c<§1Joueur§c> <§5timer§5> §c<§4Power§c>");
+            }
+        }
+        else
+        {
+            System.out.println("Dsl mais cette commande est réserver aux §2joueurs");
+        }*/

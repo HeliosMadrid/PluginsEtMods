@@ -1,0 +1,6 @@
+package fr.helios.uhcrunios.api;
+
+public class TitleManager
+{
+    
+}

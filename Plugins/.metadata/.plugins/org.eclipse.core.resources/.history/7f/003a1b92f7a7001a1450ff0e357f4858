@@ -1,0 +1,58 @@
+package fr.helios.uhcrunios.commands;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import fr.helios.uhcrunios.event.UHCSpeedRecipes;
+
+public class ResetCommand implements CommandExecutor
+{
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+    {   
+        Player player = (Player)sender;
+        
+        if(args[0].equalsIgnoreCase("List"))
+        {
+            for(Player pl : UHCSpeedRecipes.players)
+            {
+                player.sendMessage(String.valueOf(pl.getName()));
+            }
+            
+            switch(args[1])
+            {
+                case "Easter-Bowl":
+
+                    player.sendMessage("test");
+                    for(Player p : UHCSpeedRecipes.players)
+                    {
+                        p.sendMessage("L'Easter egg du bol est remis à jour tu peux le réutiliser");
+                        player.sendMessage("test1");
+                    }
+
+                    UHCSpeedRecipes.players.clear();
+                    player.sendMessage("test2");
+                    
+                    break;
+                    
+                    default:
+                        
+                        player.sendMessage("Essaye avec : §aEaster-Bowl");
+                        
+                        break;
+            }
+            
+        }
+        
+        else
+        {
+            player.sendMessage("indique ce que vous désirer reset");
+        }
+        
+        return false;
+    }
+
+}

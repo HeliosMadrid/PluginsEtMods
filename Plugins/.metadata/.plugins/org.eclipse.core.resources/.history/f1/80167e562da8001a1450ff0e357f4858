@@ -1,0 +1,32 @@
+package fr.helios.uhcrunios.commands;
+
+import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
+public class TestExecutor implements CommandExecutor
+{
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+    {
+        if(sender instanceof Player)
+        {
+            Player player = (Player)sender;
+            
+            int x = (int)(player.getLocation().getX() + 2);
+            int y = (int)player.getLocation().getY();
+            int z = (int)(player.getLocation().getZ() - 2);
+            
+            player.getWorld().getBlockAt(x, y, z).setType(Material.TNT);
+            player.getWorld().getBlockAt(x, y + 1, z).setType(Material.REDSTONE_WIRE);
+            player.getInventory().addItem(new ItemStack(Material.REDSTONE));
+            
+        }
+        
+        return false;
+    }
+
+}
