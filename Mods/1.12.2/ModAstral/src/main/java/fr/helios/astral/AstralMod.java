@@ -4,7 +4,9 @@ import org.apache.logging.log4j.Logger;
 
 import fr.helios.astral.events.RegisteringEvent;
 import fr.helios.astral.proxy.CommonProxy;
+import fr.helios.astral.utils.AstralTab;
 import fr.helios.astral.utils.References;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -22,6 +24,8 @@ public class AstralMod
     
     @SidedProxy(modId = References.MODID, clientSide = References.CLIENT_PROXY, serverSide = References.SERVER_PROXY)
     public static CommonProxy proxy;
+    
+    public static final CreativeTabs ASTRAL_TAB = new AstralTab("astral_tab");
     
     public AstralMod()
     {
