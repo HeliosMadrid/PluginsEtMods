@@ -1,0 +1,15 @@
+name: StarTreckPlugin
+author: Helios_38
+version: 1.0.0
+main: fr.helios.stplugin.StarTreckPlugin
+commands:
+  png:
+    description: spawn un png avec un non 
+  energy:
+    description: Charge le teleporter pendant 30s
+  tpverslaplanete:
+    description: tp vers la planet "worlda"
+  testIos:
+    description: permet de tester des choses debug
+  com:
+    description: communique au vaisseau super des données
